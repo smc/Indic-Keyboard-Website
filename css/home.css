@@ -1,0 +1,65 @@
+body{
+    color:#00a000 !important;
+    font-family: 'Crimson Text', serif;
+}
+
+p, nav, a, #footer
+{
+    font-family: 'Roboto', sans-serif;
+}
+
+#background{
+    background:url('../images/home.png');
+    background-size:cover;
+    height:100vh;
+    margin-top:0px;
+}
+.description
+{
+    color: white;
+    font-size: 1.7rem;
+    margin-bottom: 10vh;
+}
+
+#main_body
+{
+    height: 90vh;
+}
+
+.learn
+{
+    background-color:transparent !important;
+    border:1px solid white;
+    border-radius:5px;
+}
+
+#phones{
+    background-image: url('../images/phones1.png');
+    height:80vh;
+    /*background-color: red;*/
+    background-size: cover;
+}
+
+#main_body h2
+{
+    margin-top: 20vh;
+}
+
+nav{
+    background-color: white !important;
+}
+nav .brand-logo,nav ul a{
+    color:#00a000 !important;
+}
+
+#sometext{
+    background-color:#e0e0e0;
+}
+
+#footer{
+    background-color:#e0e0e0;
+    height:13vh;
+    color:#222 !important; 
+    padding-top:2em;
+    margin-bottom:0px;
+}
