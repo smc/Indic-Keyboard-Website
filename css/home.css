@@ -1,65 +1,148 @@
-body{
-    color:#00a000 !important;
-    font-family: 'Crimson Text', serif;
+/* Manjari */
+@font-face {
+  font-family: 'Manjari';
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://smc.org.in/downloads/fonts/manjari/Manjari-Regular.woff2?v=1.0) format('woff2'), url(https://smc.org.in/downloads/fonts/manjari/Manjari-Regular.woff?v=1.0) format('woff'), url(https://smc.org.in/downloads/fonts/manjari/Manjari-Regular.ttf?v=1.0) format('truetype');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+0D01-0D7F, U+200C-U+200D, U+25CC;
 }
 
-p, nav, a, #footer
-{
-    font-family: 'Roboto', sans-serif;
+/* Manjari Bold*/
+@font-face {
+  font-family: 'Manjari';
+  font-style: normal;
+  font-weight: 700;
+  src: url(https://smc.org.in/downloads/fonts/manjari/Manjari-Bold.woff2?v=1.0) format('woff2'), url(https://smc.org.in/downloads/fonts/manjari/Manjari-Bold.woff?v=1.0) format('woff'), url(https://smc.org.in/downloads/fonts/manjari/Manjari-Bold.ttf?v=1.0) format('truetype');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+0D01-0D7F, U+200C-U+200D, U+25CC;
 }
 
-#background{
-    background:url('../images/home.png');
-    background-size:cover;
-    height:100vh;
-    margin-top:0px;
-}
-.description
-{
-    color: white;
-    font-size: 1.7rem;
-    margin-bottom: 10vh;
+* {
+  margin: 0;
+  padding: 0;
 }
 
-#main_body
-{
-    height: 90vh;
+/* Variables */
+:root {
+  --color-primary: #4CAF50;
+  --color-primary-lighter: #8BC349;
+  --color-black: #000;
 }
 
-.learn
-{
-    background-color:transparent !important;
-    border:1px solid white;
-    border-radius:5px;
+/* Primary Elements */
+html {
+  height: 100%;
+  font-size: .75rem;
 }
 
-#phones{
-    background-image: url('../images/phones1.png');
-    height:80vh;
-    /*background-color: red;*/
-    background-size: cover;
+body {
+  color: var(--color-black);
+  font: 400 1.25rem/1.875rem "Manjari", sans-serif;
+  font-synthesis: none;
+  -moz-hanging-punctuation: first last allow-end;
+  -ms-hanging-punctuation: first last allow-end;
+  -webkit-hanging-punctuation: first last allow-end;
+  hanging-punctuation: first last allow-end;
+  min-height: 100%;
+  padding: 1.5rem 0;
+  -moz-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
 }
 
-#main_body h2
-{
-    margin-top: 20vh;
+
+header nav ul {
+  display: flex;
+  list-style-type: none;
+  justify-content: center;
+  text-align: center;
+  flex-direction: column;
+  margin: 0;
 }
 
-nav{
-    background-color: white !important;
-}
-nav .brand-logo,nav ul a{
-    color:#00a000 !important;
-}
-
-#sometext{
-    background-color:#e0e0e0;
+section {
+  box-sizing: border-box;
+  margin: 0 auto;
+  max-width: 47rem;
+  padding: 1.5rem;
 }
 
-#footer{
-    background-color:#e0e0e0;
-    height:13vh;
-    color:#222 !important; 
-    padding-top:2em;
-    margin-bottom:0px;
+ul {
+  list-style-position: outside;
+  margin: 1.5rem 0 1.5rem 1.5rem;
+}
+
+li {
+  margin-bottom: .375rem;
+}
+
+/* Headers */
+h1 {
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: .125rem;
+  line-height: 3rem;
+  margin: 1.5rem 0;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 3rem;
+  margin: 1.5rem 0;
+}
+
+* + h2 {
+  margin-top: 3rem;
+}
+
+p {
+  -moz-hyphens: auto;
+  -ms-hyphens: auto;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+  margin: 1.5rem 0;
+}
+
+footer {
+  font-size: .875rem;
+  text-align: center;
+  padding: 1.5rem;
+}
+
+footer span {
+  margin: 0 1.5rem 0 1.5rem;
+}
+
+/* Inline Elements */
+a {
+  color: var(--color-primary);
+  font-weight: 700;
+  text-decoration: none;
+  transition: color 125ms, background-color 125ms;
+}
+
+a:focus,
+a:hover {
+  color: var(--color-primary-lighter);
+}
+
+@media (min-width: 640px) {
+  html {
+    font-size: 1rem;
+  }
+
+  body {
+    padding: 1.5rem;
+  }
+
+  header nav ul {
+    flex-direction: row;
+  }
+
+  header nav li:not(:last-child) {
+    margin: 0 1.5rem 0 0;
+  }
 }

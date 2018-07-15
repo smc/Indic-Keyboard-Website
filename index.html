@@ -1,101 +1,182 @@
 <!DOCTYPE html>
 <html>
-
-<head>
-    <!--Import Google Icon Font-->
-    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Crimson+Text" rel="stylesheet">
-    <!--Import materialize.css-->
-    <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection" />
+  <head>
+    <meta charset="utf-8">
     <link rel="stylesheet" href="css/home.css" />
-    <!--Let browser know website is optimized for mobile-->
     <link rel="shortcut icon" href="images/logo.png" type="image/x-icon">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://fonts.googleapis.com/css?family=Markazi+Text:400,700" rel="stylesheet"> 
 
     <!--FB Meta tags-->
     <meta property="og:url" content=""/>
     <meta property="og:type" content="website" />
     <meta property="og:title" content="Indic Keyboard" />
-    <meta property="og:description" content="Indic keyboard brings 22 Indian languages to your Android Keyboard along with spell checking, word prediction and multiple layouts" />
+    <meta property="og:description" content="Indic keyboard brings 23 Indian languages to your mobile along with spell checking, word prediction and transliteration." />
     <meta property="og:image" content="images/logo.png" />
+  </head>
 
-</head>
-
-<body>
-    <!--Import jQuery before materialize.js-->
-    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-    <script type="text/javascript" src="js/materialize.min.js"></script>
-    <nav>
-        <div class="nav-wrapper">
-            <a href="#!" class="brand-logo">&nbsp &nbsp <img src="images/logo.png" height="80" width="80" style="margin-top: 20px;"></a>
-            <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
-            <ul class="right hide-on-med-and-down">
-                <li><a href="#0">BLOG</a></li>
-                <li><a href="#0">HELP</a></li>
-                <li><a href="#0">ABOUT US</a></li>
-            </ul>
-            <ul class="side-nav" id="mobile-demo">
-                <li><a href="#0">BLOG</a></li>
-                <li><a href="#0">HELP</a></li>
-                <li><a href="#0">ABOUT US</a></li>
-            </ul>
-        </div>
-    </nav>
-    <div id="background">
-        <div id="main_body" class="row">
-            <div class="col s12 m12 l6 offset-l6">
-                <h2 class="center-align white-text text-darken-2">Indic Keyboard</h2>
-                <br><br>
-            </div>
-            <div class="col s10 m10 l4 offset-l7 offset-m3 offset-s4">
-                <center>
-                    <p class="description">Indic keyboard brings 22 Indian languages to your Android Keyboard along with spell checking, word prediction
-                        and multiple layouts.</p>
-                </center>
-            </div>
-            <div class="col s10 m10 l4 offset-l7 offset-m3 offset-s4">
-                <a class="learn waves-effect waves-light btn-large">Learn more</a>
-                <a target="_blank" href="https://play.google.com/store/apps/details?id=org.smc.inputmethod.indic&hl=en" class=" waves-effect waves-light"><img width="190" height="82" src="images/gplay.png" alt="" style="margin-top:5px;"></a>
-            </div>
-        </div>
-    </div>
-    <div id="sometext">
+  <body>
+    <header>
+      <h1 id="contributor-covenant-code-of-conduct">
+        <img class="logo" src="images/logo.png" alt="Indic Keyboard Logo"/>
         <br/>
-        <h2 style="margin:0.5em 0em;text-align:center;font-size:2.2em;color:#00a000;font-weight:400;padding-top:0.1em;">MY LANGUAGE FOR MY PHONE</h2>
-        <h3 style="margin:1em 1em;text-align:center;font-size:1.8em;color:#2dd02d;margin-top:1.2em;">Preserve the soul and essence of your words by typing in your own language.</h3>
-        <p style="color:#2f2f2f;font-weight:300;padding:0.5em 10em;font-size:1.25em;text-align:center;padding-bottom:1.7em;;"> &nbsp &nbsp Indic Keyboard now supports 22 Asian languages, including 18 Indian languages apart from English, and
-            54 input layouts. The 23 supported layouts are Assamese, Arabic, Bengali, Burmese, English, Gujarati, Hindi,
-            Kannada, Kashmiri, Malayalam, Manipuri, Maithili,Marathi, Mon, Nepali, Odia, Punjabi, Sanskrit, Santali, Sinhala,
-            Tamil, Telugu and Urdu.
-        </p>
-    </div>
-    <div style="margin-top:3em;">
-        <h3 style="margin:0.5em 4em;text-align:center;font-size:2.2em;line-height:1.5em;color:#00a000;font-weight:500;padding:0.1em 8rem;">INDIC KEYBOARD FOR ANDROID SUPPORTS 23 LANGUAGES AND MORE THAN 50 KEYBOARD LAYOUTS</h3>
-    </div>
-    <div id="phones"></div>
-    <div class="row" style="color:black !important">
-        <div class="col s4">
-            <p style="padding:0.5em 3em;font-size:1.25em;text-align:center">Typing your language on mobiles has never been this easy.</p>
-        </div>
-        <div class="col s4">
-            <p style="padding:0.5em 3em;font-size:1.25em;text-align:center">Multiple "keyboard layouts"<br/> You will have different ways to type in your local language.</p>
-        </div>
-        <div class="col s4">
-            <p style="padding:0.5em 3em;font-size:1.25em;text-align:center">Make it easy to type and read it in your own language.</p>
-        </div>
-    </div>
-    <div class="row" id="footer">
-        <div class="col l1"></div>
-        <div class="col s12 m6 l5">
-            <!--<span style="font-size:1.25em;text-align:center">
-                &copy Copyright Indic Keyboard 2017.</span>-->
-        </div>
-        <div class="col l4"></div>
-        <div class="col s12 m6 l2">
-            <span style="margin-left:-20px;font-size:1.25em;text-align:center">
-                Blog &nbsp &nbsp Help &nbsp &nbsp About Us</span>
-        </div>
-    </div>
-</body>
+        Indic Keyboard
+      </h1>
+      <nav id="navigation">
+        <ul>
+          <li>
+            <a href='#languages'>Supported Languages</a>
+          </li>
+          <li>
+            <a href='#download'>Download</a>
+          </li>
+          <li>
+            <a href='#source'>Source Code</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
 
+    <section>
+
+      <h2 id="about">&nbsp;</h2>
+      <p>
+        Indic Keyboard is a versatile keyboard for Android users who wish to use Indic and Indian languages to type messages, compose emails and generally prefer to use them in addition to English on their phone. You can use this application to type anywhere in your phone that you would normally type in English. It currently supports 23 languages and 54 layouts.
+      </p>
+
+
+      <h2 id="device">Will my phone support it ?</h2>
+      <p>
+        Indic keyboard supports Android version 4.1 and above (Jellybean, Kitkat and Lollipop). If you can see your language in its native script below you should be able to install and use it. 
+      </p>
+
+      <p>
+        Some devices may not support all the languages listed since the device manufacturer didn't ship necessary fonts. For older versions of Android, even when necessary fonts are there, rendering for some of the languages is not perfect. This is some thing which we can't fix from application side.
+      </p>
+
+      <h2 id="languages">What languages (and layouts) are supported ?</h2>
+      <ul>
+        <li>
+          Assamese Keyboard (অসমীয়া) - <i>Inscript, Transliteration</i>
+        </li>
+        <li>
+          Arabic Keyboard (العَرَبِيةُ‎‎)
+        </li>
+        <li>
+          Bengali Keyboard (বাংলা) - Probhat, Avro, Inscript, Compact
+        </li>
+        <li>
+          Burmese Keyboard (ဗမာ) - xkb
+        </li>
+        <li>
+          English
+        </li>
+        <li>
+          Gujarati Keyboard (ગુજરાતી) - Phonetic, Inscript, Transliteration
+        </li>
+        <li>
+          Hindi Keyboard (हिन्दी) - Inscript, Transliteration
+        </li>
+        <li>
+          Kannada Keyboard (ಕನ್ನಡ) - Phonetic, Inscript, Transliteration (Baraha), Compact, Anysoft)
+        </li>
+        <li>
+          Kashmiri Keyboard (کأشُر) - Inscript, Transliteration
+        </li>
+        <li>
+          Malayalam Keyboard (മലയാളം) - Phonetic, Inscript, Transliteration (Mozhi), Swanalekha(beta)
+        </li>
+        <li>
+          Manipuri Keyboard / Methei Keyboard (মৈতৈলোন্) - Inscript
+        </li>
+        <li>
+          Maithili Keyboard (मैथिली) - Inscript
+        </li>
+        <li>
+          Marathi Keyboard (मराठी) - Transliteration
+        </li>
+        <li>
+          Mon Keyboard (ဘာသာ မန်;)
+        </li>
+        <li>
+          Nepali Keyboard (नेपाली) - Phonetic, Traditional, Transliteration, Inscript
+        </li>
+        <li>
+          Oriya Keyboard (ଓଡ଼ିଆ) - Inscript, Transliteration, Lekhani
+        </li>
+        <li>
+          Punjabi Keyboard (ਪੰਜਾਬੀ) - Phonetic, Inscript, Transliteration
+        </li>
+        <li>
+          Sanskrit Keyboard (संस्कृत) - Transliteration
+        </li>
+        <li>
+          Santali Keyboard (Devanagari script) (संताली) - Inscript
+        </li>
+        <li>
+          Sinhala Keyboard / Sinhalese (සිංහල) - Transliteration
+        </li>
+        <li>
+          Tamil Keyboard (தமிழ்) - Tamil-99, Inscript, Phonetic, Compact, Transliteration
+        </li>
+        <li>
+          Telugu Keyboard (తెలుగు) - Phonetic, Inscript, Transliteration, KaChaTaThaPa, Compact
+        </li>
+        <li>
+          Urdu Keyboard (اردو) - Transliteration
+        </li>
+      </ul>
+
+      <h2 id="layout">What is a keyboard layout ?</h2>
+      <p>
+        Indic keyboard provides multiple "keyboard layouts". This means that you will have different  ways to type in your native language.
+      </p>
+
+      <p>
+        <strong>Transliteration</strong> allows you to type out words using English characters, but will automatically transform the words to your native language. For example, if you type "namaste" in English while using Devanagari transliteration keyboard, it will transform it to नमस्ते correctly.
+      </p>
+
+      <p>
+        <strong>Inscript layout</strong> is the standardized keyboard that Government of India came up with to cater for the majority of the languages in India. We support the full specification, and if you are already familiar with Inscript on your Desktop, it will work on the phone too.
+      </p>
+
+      <p>
+        <strong>Phonetic Keyboard</strong> is similar to Transliteration scheme - you can type what the words sound like using English characters and it will be automatically transformed into your language.
+      </p>
+
+      <p>
+        <strong>Compact Keyboard</strong> allows to type Indian languages without the shift key. You can long press on the letters to get more options.
+      </p>
+
+      <p>
+        Other layouts are specific to the languages - do try them out.
+      </p>
+
+      <h2 id="download">From where can I get it ?</h2>
+      <p>
+        <ul>
+          <li>
+            <a href="https://f-droid.org/en/packages/org.smc.inputmethod.indic/">F-Droid</a>
+          </li>
+          <li>
+            <a href="https://play.google.com/store/apps/details?id=org.smc.inputmethod.indic">Google Play Store</a>
+          </li>
+        </ul>
+      </p>
+
+      <h2 id="source">Where can I get the source code ?</h2>
+      <p>
+        You can get the source code or report issues in our <a href="https://gitlab.com/smc/indic-keyboard">GitLab repo</a>.
+      </p>
+    </section>
+
+      <footer>
+        <p>
+          <a href="/privacy.html" title="Privacy Policy">Privacy Policy</a>
+          <span>|</span>
+          <a href="/code-of-conduct.html" title="Code of Conduct">Code of Conduct</a>
+        </p>
+      </footer>
+    </div>
+  </body>
 </html>
