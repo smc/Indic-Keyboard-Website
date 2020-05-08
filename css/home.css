@@ -32,6 +32,7 @@
 html {
   height: 100%;
   font-size: .75rem;
+  scroll-behavior: smooth;
 }
 
 body {
