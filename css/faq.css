@@ -65,7 +65,7 @@ header nav ul {
 section {
   box-sizing: border-box;
   margin: 0 auto;
-  max-width: 47rem;
+  max-width: 67rem;
   padding: 1.5rem;
 }
 
@@ -147,4 +147,30 @@ a:hover {
   header nav li:not(:last-child) {
     margin: 0 1.5rem 0 0;
   }
+}
+
+.accordion-section .panel-default > .panel-heading {
+    border: 0;
+    background: #f4f4f4;
+    padding: 0;
+}
+.accordion-section .panel-default .panel-title a {
+    display: block;
+    color: #53b260;
+    font-size: 1.5rem;
+}
+.accordion-section .panel-default .panel-title a:after {
+    font-family: 'FontAwesome';
+    font-style: normal;
+    font-size: 3rem;
+    content: "\f106";
+    color: #8BC349;
+    float: right;
+    margin-top: -12px;
+}
+.accordion-section .panel-default .panel-title a.collapsed:after {
+    content: "\f107";
+}
+.accordion-section .panel-default .panel-body {
+    font-size: 1.2rem;
 }
