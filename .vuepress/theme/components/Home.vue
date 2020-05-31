@@ -21,9 +21,10 @@
         v-if="data.tagline !== null"
         class="description"
       >
-        {{ data.tagline || $description || 'Welcome to your VuePress site' }}
+        <Content slot-key="description"/>
       </p>
 
+      <h2>Download</h2>
       <p
         v-if="data.action && data.action.length"
         class="action"
@@ -54,10 +55,9 @@
     <Content class="theme-default-content custom" />
 
     <div
-      v-if="data.footer"
       class="footer"
     >
-      {{ data.footer }}
+      <Content slot-key="footer"/>
     </div>
   </main>
 </template>
@@ -84,8 +84,8 @@ export default {
   max-width $homePageWidth
   margin 0px auto
   display block
+  max-width 35rem
   .hero
-    text-align center
     img
       max-width: 100%
       max-height 280px
@@ -93,17 +93,20 @@ export default {
       margin 3rem auto 1.5rem
     h1
       font-size 3rem
+      text-align center
     h1, .description, .action
       margin 1.8rem auto
     .description
       max-width 35rem
-      font-size 1.6rem
+      font-size 1.5rem
       line-height 1.3
-      color lighten($textColor, 40%)
+    .action
+      display flex
     .action-button
-      display inline-block
-      min-width 25%
+      width 50%
       font-size 1.2rem
+      text-align center
+      font-weight 700
       color #fff
       background-color $accentColor
       padding 0.8rem 1.6rem

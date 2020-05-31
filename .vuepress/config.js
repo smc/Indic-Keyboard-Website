@@ -11,6 +11,8 @@ module.exports = {
       { text: 'What\'s New', link: '/whats-new' },
       { text: 'FAQ', link: '/faq' },
       { text: 'Contact Us', link: '/#contact-us' },
+      { text: 'Privacy Policy', link: '/privacy' },
+      { text: 'Code of Conduct', link: '/code-of-conduct' },
     ]
   }
 }

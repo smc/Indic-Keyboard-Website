@@ -8,8 +8,8 @@ You can get the source code or report issues in our GitLab repo. License for the
 
 ## From where can I download it ?
 
-- F-Droid
-- Google Play Store
+- [F-Droid](https://f-droid.org/en/packages/org.smc.inputmethod.indic/)
+- [Google Play Store](https://play.google.com/store/apps/details?id=org.smc.inputmethod.indic)
 
 ## Will my phone support it ?
 
