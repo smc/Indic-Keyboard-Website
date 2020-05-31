@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "start": "nodemon --ext md,vue --watch .vuepress --watch . --exec vuepress dev",
+    "start": "nodemon --ext md,vue,styl --watch .vuepress --watch . --exec vuepress dev",
     "build": "vuepress build"
   },
   "devDependencies": {
