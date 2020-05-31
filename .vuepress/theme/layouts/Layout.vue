@@ -40,6 +40,12 @@
         <slot name="page-bottom" />
       </template>
     </Page>
+
+    <main class="theme-default-content">
+      <div class="footer">
+        <Content slot-key="footer"/>
+      </div>
+    </main>
   </div>
 </template>
 
@@ -149,3 +155,11 @@ export default {
   }
 }
 </script>
+
+<style lang="stylus">
+  .footer
+    padding 2.5rem
+    border-top 1px solid $borderColor
+    text-align center
+    color lighten($textColor, 25%)
+</style>

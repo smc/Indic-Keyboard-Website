@@ -53,12 +53,6 @@
     </div>
 
     <Content class="theme-default-content custom" />
-
-    <div
-      class="footer"
-    >
-      <Content slot-key="footer"/>
-    </div>
   </main>
 </template>
 
@@ -140,11 +134,6 @@ export default {
       color lighten($textColor, 10%)
     p
       color lighten($textColor, 25%)
-  .footer
-    padding 2.5rem
-    border-top 1px solid $borderColor
-    text-align center
-    color lighten($textColor, 25%)
   h2
     margin-top 2em
 
