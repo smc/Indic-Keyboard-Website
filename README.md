@@ -1,9 +1,4 @@
 ---
-action:
-- text: F-Droid
-  link: https://f-droid.org/en/packages/org.smc.inputmethod.indic/
-- text: Google Play Store
-  link: https://play.google.com/store/apps/details?id=org.smc.inputmethod.indic
 editLink: false
 ---
 ::: slot description
@@ -35,6 +30,9 @@ Indic Keyboard is a [MOSS Award](https://www.mozilla.org/en-US/moss/) winning, p
 - Telugu (తెలుగు)
 - Urdu (اردو)
 
+## Download
+- [F-Droid](https://f-droid.org/en/packages/org.smc.inputmethod.indic/)
+- [Google Play Store](https://play.google.com/store/apps/details?id=org.smc.inputmethod.indic)
 
 ## Contact Us
 - [Telegram](https://t.me/indickeyboard)

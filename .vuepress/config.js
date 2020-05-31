@@ -9,6 +9,7 @@ module.exports = {
     editLinkText: 'Help us improve this page!',
     nav: [
       { text: 'Home', link: '/' },
+      { text: 'Download', link: '/#download' },
       { text: 'FAQ', link: '/faq' },
       { text: 'What\'s New', link: '/whats-new' },
       { text: 'Contact Us', link: '/#contact-us' },

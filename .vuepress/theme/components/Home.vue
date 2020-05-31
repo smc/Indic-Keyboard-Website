@@ -33,19 +33,6 @@
       >
         <Content slot-key="description"/>
       </p>
-
-      <h2>Download</h2>
-      <p
-        v-if="data.action && data.action.length"
-        class="action"
-      >
-        <NavLink
-          class="action-button"
-          v-for="(e, index) in data.action"
-          :key="index"
-          :item="e"
-        />
-      </p>
     </header>
   </main>
 </template>
@@ -87,35 +74,16 @@ export default {
     h1
       font-size 3rem
       text-align center
-    h1, .description, .action
+    h1, .description
       margin 1.8rem auto
     .description
       font-size 1.5rem
       line-height 1.3
-    .action
-      display flex
-    .action-button
-      width 50%
-      font-size 1.2rem
-      text-align center
-      font-weight 700
-      color #fff
-      background-color $accentColor
-      padding 0.8rem 1.6rem
-      border-radius 4px
-      transition background-color .1s ease
-      box-sizing border-box
-      border-bottom 1px solid darken($accentColor, 10%)
-      &:hover
-        background-color lighten($accentColor, 10%)
-      &:not(:last-child)
-        margin-right 1rem
-      .outbound
-        display none
     .links
       text-align center
     .search-box
       margin-bottom 1.5em
+      z-index 99
 
 @media (max-width: $MQMobileNarrow)
   .home
