@@ -1,6 +1,4 @@
----
-title: What's New
----
+# What's New
 
 ## v2.1 - 2018 Jul 22
 - Support for Santali Ol Chiki

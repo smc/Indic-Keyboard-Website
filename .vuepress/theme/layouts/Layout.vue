@@ -2,9 +2,7 @@
   <div
     class="theme-container"
     :class="pageClasses">
-    <Navbar v-if="shouldShowNavbar" />
-
-    <Home v-if="$page.frontmatter.home" />
+    <Home />
 
     <Page>
       <template #top>

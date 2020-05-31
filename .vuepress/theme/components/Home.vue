@@ -5,17 +5,27 @@
   >
     <header class="hero">
       <img
-        v-if="data.heroImage"
-        :src="$withBase(data.heroImage)"
-        :alt="data.heroAlt || 'hero'"
+        v-if="$site.themeConfig.logo"
+        :src="$withBase($site.themeConfig.logo) || $withBase(data.heroImage)"
+        :alt="$siteTitle || data.heroText"
       >
 
       <h1
-        v-if="data.heroText !== null"
+        v-if="$siteTitle"
         id="main-title"
       >
-        {{ data.heroText || $title || 'Hello' }}
+        {{ $siteTitle || data.heroText || $title }}
       </h1>
+
+      <div
+        class="links"
+        :style="linksWrapMaxWidth ? {
+          'max-width': linksWrapMaxWidth + 'px'
+        } : {}"
+      >
+        <SearchBox v-if="$site.themeConfig.search !== false && $page.frontmatter.search !== false" />
+        <NavLinks class="can-hide" />
+      </div>
 
       <p
         v-if="data.tagline !== null"
@@ -56,11 +66,17 @@
 
 <script>
 import NavLink from '@theme/components/NavLink.vue'
+import SearchBox from '@SearchBox'
+import NavLinks from '@theme/components/NavLinks.vue'
 
 export default {
   name: 'Home',
 
-  components: { NavLink },
+  components: {
+    NavLink,
+    NavLinks,
+    SearchBox
+  },
 
   computed: {
     data () {
@@ -111,6 +127,8 @@ export default {
         margin-right 1rem
       .outbound
         display none
+    .links
+      text-align center
   .features
     border-top 1px solid $borderColor
     padding 1.2rem 0
