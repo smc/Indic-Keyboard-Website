@@ -1,3 +1,7 @@
+---
+title: Frequently Asked Questions
+---
+
 ## How is it privacy aware ?
 
 We do not collect or store any information via the app. Infact, we did go one step ahead and removed the Internet permission. Indic Keyboard is one of the safest way to type even in English language.
