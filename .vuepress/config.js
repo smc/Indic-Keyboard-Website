@@ -1,5 +1,6 @@
 module.exports = {
   title: 'Indic Keyboard',
+  dest: 'public',
   themeConfig: {
     logo: '/logo.png',
     repo: 'https://gitlab.com/indicproject/indic-keyboard',
