@@ -1,11 +1,11 @@
 ---
 home: true
+heroImage: /logo.png
 heroText: Indic Keyboard
 tagline: Free and Open Source android keyboard for 23+ languages
 actionText: Download
 actionLink: /#download
 ---
-
 Indic Keyboard is a [MOSS Award](https://www.mozilla.org/en-US/moss/) winning, privacy aware versatile keyboard for Android users who wish to use Indic and Indian languages to type messages, compose emails and generally prefer to use them in addition to English on their phone. You can use this application to type anywhere in your phone that you would normally type in English. It currently supports [23 languages](/#languages) and 57 layouts.
 
 
