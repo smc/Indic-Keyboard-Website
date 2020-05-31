@@ -7,12 +7,6 @@ module.exports = (options, ctx) => {
   const enableSmoothScroll = themeConfig.smoothScroll === true
 
   return {
-    alias () {
-      return {
-        '@AlgoliaSearchBox': path.resolve(__dirname, 'noopModule.js')
-      }
-    },
-
     plugins: [
       ['@vuepress/active-header-links', options.activeHeaderLinks],
       '@vuepress/search',
