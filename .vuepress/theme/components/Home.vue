@@ -66,11 +66,12 @@ export default {
   margin 0px auto
   display block
   .hero
+    margin-top 0 !important
     img
-      max-width: 100%
-      max-height 280px
+      max-width 100%
+      max-height 150px
       display block
-      margin 3rem auto 1.5rem
+      margin 1.5rem auto
     h1
       font-size 3rem
       text-align center
