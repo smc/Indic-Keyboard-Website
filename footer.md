@@ -4,4 +4,4 @@
 |
 [Indic Project](https://indicproject.org)
 |
-[SMC Project](https://smc.org.in)
+[SMC](https://smc.org.in)
