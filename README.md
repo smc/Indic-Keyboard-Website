@@ -37,11 +37,10 @@ Indic Keyboard is a [MOSS Award](https://www.mozilla.org/en-US/moss/) winning, p
 
 ## Download
 
-- F-Droid
-- Google Play Store
-
+- [F-Droid](https://f-droid.org/en/packages/org.smc.inputmethod.indic/)
+- [Google Play Store](https://play.google.com/store/apps/details?id=org.smc.inputmethod.indic)
 
 ## Contact Us
-- Telegram
+- [Telegram](https://t.me/indickeyboard)
 - IRC - #indicproject at Freenode.net
-- Email
+- [Email](mailto:indicapp@jishnu.xyz)
