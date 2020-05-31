@@ -32,6 +32,10 @@
           class="action-button"
           :item="actionLink"
         />
+        <NavLink
+          class="action-button"
+          :item="actionLink2"
+        />
       </p>
     </header>
 
@@ -78,6 +82,13 @@ export default {
         link: this.data.actionLink,
         text: this.data.actionText
       }
+    },
+
+    actionLink2 () {
+      return {
+        link: this.data.actionLink2,
+        text: this.data.actionText2
+      }
     }
   }
 }
@@ -107,6 +118,7 @@ export default {
       color lighten($textColor, 40%)
     .action-button
       display inline-block
+      min-width 25%
       font-size 1.2rem
       color #fff
       background-color $accentColor
@@ -115,6 +127,8 @@ export default {
       transition background-color .1s ease
       box-sizing border-box
       border-bottom 1px solid darken($accentColor, 10%)
+      .outbound
+        display none
       &:hover
         background-color lighten($accentColor, 10%)
   .features
