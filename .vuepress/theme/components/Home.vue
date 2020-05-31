@@ -97,7 +97,6 @@ export default {
     h1, .description, .action
       margin 1.8rem auto
     .description
-      max-width 35rem
       font-size 1.5rem
       line-height 1.3
     .action
@@ -146,6 +145,8 @@ export default {
     border-top 1px solid $borderColor
     text-align center
     color lighten($textColor, 25%)
+  h2
+    margin-top 2em
 
 @media (max-width: $MQMobile)
   .home
