@@ -22,14 +22,9 @@
         {{ $siteTitle || data.heroText || $title }}
       </h1>
 
-      <div
-        class="links"
-        :style="linksWrapMaxWidth ? {
-          'max-width': linksWrapMaxWidth + 'px'
-        } : {}"
-      >
+      <div class="links">
         <SearchBox v-if="$site.themeConfig.search !== false && $page.frontmatter.search !== false" />
-        <NavLinks class="can-hide" />
+        <NavLinks/>
       </div>
 
       <p
@@ -52,20 +47,6 @@
         />
       </p>
     </header>
-
-    <div
-      v-if="data.features && data.features.length"
-      class="features"
-    >
-      <div
-        v-for="(feature, index) in data.features"
-        :key="index"
-        class="feature"
-      >
-        <h2>{{ feature.title }}</h2>
-        <p>{{ feature.details }}</p>
-      </div>
-    </div>
   </main>
 </template>
 
@@ -133,37 +114,8 @@ export default {
         display none
     .links
       text-align center
-  .features
-    border-top 1px solid $borderColor
-    padding 1.2rem 0
-    margin-top 2.5rem
-    display flex
-    flex-wrap wrap
-    align-items flex-start
-    align-content stretch
-    justify-content space-between
-  .feature
-    flex-grow 1
-    flex-basis 30%
-    max-width 30%
-    h2
-      font-size 1.4rem
-      font-weight 500
-      border-bottom none
-      padding-bottom 0
-      color lighten($textColor, 10%)
-    p
-      color lighten($textColor, 25%)
-  h2
-    margin-top 2em
-
-@media (max-width: $MQMobile)
-  .home
-    .features
-      flex-direction column
-    .feature
-      max-width 100%
-      padding 0 2.5rem
+    .search-box
+      margin-bottom 1.5em
 
 @media (max-width: $MQMobileNarrow)
   .home
@@ -182,7 +134,4 @@ export default {
       .action-button
         font-size 1rem
         padding 0.6rem 1.2rem
-    .feature
-      h2
-        font-size 1.25rem
 </style>
