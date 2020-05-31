@@ -45,5 +45,4 @@ Indic Keyboard is a [MOSS Award](https://www.mozilla.org/en-US/moss/) winning, p
 
 ## Contact Us
 - [Telegram](https://t.me/indickeyboard)
-- IRC - #indicproject at Freenode.net
 - [Email](mailto:indicapp@jishnu.xyz)
