@@ -7,6 +7,7 @@ action:
   link: https://f-droid.org/en/packages/org.smc.inputmethod.indic/
 - text: Google Play Store
   link: https://play.google.com/store/apps/details?id=org.smc.inputmethod.indic
+editLink: false
 ---
 ::: slot description
 Indic Keyboard is a [MOSS Award](https://www.mozilla.org/en-US/moss/) winning, privacy aware versatile keyboard for Android users who wish to use Indic and Indian languages to type messages, compose emails and generally prefer to use them in addition to English on their phone. You can use this application to type anywhere in your phone that you would normally type in English. It currently supports [23 languages](/#supported-languages) and 57 layouts.

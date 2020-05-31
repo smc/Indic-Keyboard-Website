@@ -1,17 +1,12 @@
 <template>
   <div
     class="theme-container"
-    :class="pageClasses"
-    @touchstart="onTouchStart"
-    @touchend="onTouchEnd"
-  >
+    :class="pageClasses">
     <Navbar v-if="shouldShowNavbar" />
 
     <Home v-if="$page.frontmatter.home" />
 
-    <Page
-      v-else
-    >
+    <Page>
       <template #top>
         <slot name="page-top" />
       </template>
