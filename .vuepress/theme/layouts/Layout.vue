@@ -15,7 +15,7 @@
 
     <main class="theme-default-content">
       <div class="footer">
-        <Content slot-key="footer"/>
+        <Content :page-key="$site.pages.find(p => p.path === '/footer.html').key"/>
       </div>
     </main>
   </div>

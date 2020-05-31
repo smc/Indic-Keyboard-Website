@@ -39,13 +39,3 @@ Indic Keyboard is a [MOSS Award](https://www.mozilla.org/en-US/moss/) winning, p
 ## Contact Us
 - [Telegram](https://t.me/indickeyboard)
 - [Email](mailto:indicapp@jishnu.xyz)
-
-::: slot footer
-[Privacy Policy](/privacy)
-|
-[Code of Conduct](/code-of-conduct)
-|
-[Indic Project](https://indicproject.org)
-|
-[SMC Project](https://smc.org.in)
-:::
