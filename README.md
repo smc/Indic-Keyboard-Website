@@ -5,6 +5,10 @@ editLink: false
 Indic Keyboard is a [MOSS Award](https://www.mozilla.org/en-US/moss/) winning, privacy aware versatile keyboard for Android users who wish to use Indic and Indian languages to type messages, compose emails and generally prefer to use them in addition to English on their phone. You can use this application to type anywhere in your phone that you would normally type in English. It currently supports [23 languages](/#supported-languages) and 57 layouts.
 :::
 
+## Download
+- [F-Droid](https://f-droid.org/en/packages/org.smc.inputmethod.indic/)
+- [Google Play Store](https://play.google.com/store/apps/details?id=org.smc.inputmethod.indic)
+
 ## Supported Languages and Layouts
 - Assamese Keyboard (অসমীয়া) - Inscript, Transliteration
 - Arabic Keyboard (العَرَبِيةُ‎‎)
@@ -29,10 +33,6 @@ Indic Keyboard is a [MOSS Award](https://www.mozilla.org/en-US/moss/) winning, p
 - Tamil Keyboard (தமிழ்) - Tamil-99, Inscript, Phonetic, Compact, Transliteration
 - Telugu Keyboard (తెలుగు) - Phonetic, Inscript, Transliteration, KaChaTaThaPa, Compact
 - Urdu Keyboard (اردو) - Transliteration
-
-## Download
-- [F-Droid](https://f-droid.org/en/packages/org.smc.inputmethod.indic/)
-- [Google Play Store](https://play.google.com/store/apps/details?id=org.smc.inputmethod.indic)
 
 ## Contact Us
 - [Telegram](https://t.me/indickeyboard)
