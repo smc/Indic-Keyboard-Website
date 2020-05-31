@@ -1,7 +1,4 @@
 ---
-home: true
-heroImage: /logo.png
-heroText: Indic Keyboard
 action:
 - text: F-Droid
   link: https://f-droid.org/en/packages/org.smc.inputmethod.indic/

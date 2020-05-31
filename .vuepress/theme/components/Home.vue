@@ -1,14 +1,19 @@
 <template>
   <main
-    class="home"
+    class="home theme-default-content"
     aria-labelledby="main-title"
   >
     <header class="hero">
-      <img
-        v-if="$site.themeConfig.logo"
-        :src="$withBase($site.themeConfig.logo) || $withBase(data.heroImage)"
-        :alt="$siteTitle || data.heroText"
+      <RouterLink
+        :to="$localePath"
+        class="home-link"
       >
+        <img
+          v-if="$site.themeConfig.logo"
+          :src="$withBase($site.themeConfig.logo) || $withBase(data.heroImage)"
+          :alt="$siteTitle || data.heroText"
+        />
+      </RouterLink>
 
       <h1
         v-if="$siteTitle"
@@ -92,7 +97,6 @@ export default {
   max-width $homePageWidth
   margin 0px auto
   display block
-  max-width 35rem
   .hero
     img
       max-width: 100%

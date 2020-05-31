@@ -8,11 +8,10 @@ module.exports = {
     editLinks: true,
     editLinkText: 'Help us improve this page!',
     nav: [
-      { text: 'What\'s New', link: '/whats-new' },
+      { text: 'Home', link: '/' },
       { text: 'FAQ', link: '/faq' },
+      { text: 'What\'s New', link: '/whats-new' },
       { text: 'Contact Us', link: '/#contact-us' },
-      { text: 'Privacy Policy', link: '/privacy' },
-      { text: 'Code of Conduct', link: '/code-of-conduct' },
     ]
   }
 }
