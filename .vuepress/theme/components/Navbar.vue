@@ -1,7 +1,5 @@
 <template>
   <header class="navbar">
-    <SidebarButton @toggle-sidebar="$emit('toggle-sidebar')" />
-
     <RouterLink
       :to="$localePath"
       class="home-link"
@@ -39,14 +37,12 @@
 <script>
 import AlgoliaSearchBox from '@AlgoliaSearchBox'
 import SearchBox from '@SearchBox'
-import SidebarButton from '@theme/components/SidebarButton.vue'
 import NavLinks from '@theme/components/NavLinks.vue'
 
 export default {
   name: 'Navbar',
 
   components: {
-    SidebarButton,
     NavLinks,
     SearchBox,
     AlgoliaSearchBox
