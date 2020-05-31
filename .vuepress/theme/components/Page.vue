@@ -2,14 +2,6 @@
   <main class="page">
     <slot name="top" />
 
-    <div class="theme-default-content page-title">
-      <h1
-        v-if="data.title !== null"
-      >
-        {{ data.title }}
-      </h1>
-    </div>
-
     <Content class="theme-default-content" />
     <PageEdit />
 
@@ -40,8 +32,5 @@ export default {
 .page
   padding-bottom 2rem
   display block
-  .page-title
-    margin-top 3rem
-    padding-bottom 0
 
 </style>

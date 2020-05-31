@@ -1,6 +1,4 @@
----
-title: Frequently Asked Questions
----
+# Frequently Asked Questions
 
 ## How is it privacy aware ?
 
