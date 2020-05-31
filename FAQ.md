@@ -65,3 +65,11 @@ There are some other layouts as well, specific to the languages - do try them ou
 
 We do have a variant of Indic Keyboard with gesture typing (swipe) enabled. You can get the app from Google Play Store. This version uses proprietary binaries from Google, we do not have access to the source code of that.
 
+
+## Settings screen doesn't open in MiUI (Xiaomi devices)
+This is due to a permission issue specific to MiUI. It can be fixed by giving MiUI specific permission by following steps
+- Open settings
+- Go to Permissions
+- Navigate to other permissions
+- Select Indic Keyboard from the list
+- Give permission for Display pop-up windows while running in the background
