@@ -25,16 +25,14 @@
       </p>
 
       <p
-        v-if="data.actionText && data.actionLink"
+        v-if="data.action && data.action.length"
         class="action"
       >
         <NavLink
           class="action-button"
-          :item="actionLink"
-        />
-        <NavLink
-          class="action-button"
-          :item="actionLink2"
+          v-for="(e, index) in data.action"
+          :key="index"
+          :item="e"
         />
       </p>
     </header>
@@ -75,20 +73,6 @@ export default {
   computed: {
     data () {
       return this.$page.frontmatter
-    },
-
-    actionLink () {
-      return {
-        link: this.data.actionLink,
-        text: this.data.actionText
-      }
-    },
-
-    actionLink2 () {
-      return {
-        link: this.data.actionLink2,
-        text: this.data.actionText2
-      }
     }
   }
 }
