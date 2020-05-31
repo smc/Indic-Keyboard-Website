@@ -111,10 +111,12 @@ export default {
       transition background-color .1s ease
       box-sizing border-box
       border-bottom 1px solid darken($accentColor, 10%)
-      .outbound
-        display none
       &:hover
         background-color lighten($accentColor, 10%)
+      &:not(:last-child)
+        margin-right 1rem
+      .outbound
+        display none
   .features
     border-top 1px solid $borderColor
     padding 1.2rem 0
