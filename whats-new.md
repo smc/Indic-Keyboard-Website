@@ -6,6 +6,7 @@
 - Updated set of emojis
 - Option to set permanent emoji key
 - Option to turn on number row
+- Option to resize keyboard
 - Several bugfixes
 - New dictionaries for Kashmiri, Marathi, Maithili, Odia, Sanskrit, Santali, Assamese
 
