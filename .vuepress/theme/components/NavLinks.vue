@@ -127,6 +127,7 @@ export default {
   display inline-block
   a
     line-height 1.4rem
+    margin-right 1.4rem
     color inherit
     &:hover, &.router-link-active
       color $accentColor
