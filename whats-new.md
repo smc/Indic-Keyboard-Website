@@ -1,5 +1,12 @@
 # What's New
 
+## v3.1 - 2020 Jul 28
+- New icon
+- Fix setup wizard - now this will work in all text and display sizes
+- Removed hint from qwerty layout's top row.
+- Fixes for Bengali Avro layout (PR from Akshy)
+
+
 ## v3.0 - 2020 Jul 19
 - Separate versions for armv7 and armv8
 - Support run-time permissions
