@@ -8,6 +8,7 @@ Indic Keyboard is a [MOSS Award](https://www.mozilla.org/en-US/moss/) winning, p
 ## Download
 - [F-Droid](https://f-droid.org/en/packages/org.smc.inputmethod.indic/)
 - [Google Play Store](https://play.google.com/store/apps/details?id=org.smc.inputmethod.indic)
+- [Direct Download](https://releases.smc.org.in/indic-keyboard/)
 
 ## Supported Languages and Layouts
 - Assamese Keyboard (অসমীয়া) - Inscript, Transliteration
