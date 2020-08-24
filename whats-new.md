@@ -1,5 +1,11 @@
 # What's New
 
+## v3.2 - 2020 Aug 23
+- Swipe backspace to select and delete
+- Swipe space bar for navigation
+- 3 new themes
+- Fix overflow of Malayalam characters
+
 ## v3.1 - 2020 Jul 28
 - New icon
 - Fix setup wizard - now this will work in all text and display sizes
