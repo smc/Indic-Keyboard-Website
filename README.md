@@ -33,7 +33,7 @@ Indic Keyboard is a [MOSS Award](https://www.mozilla.org/en-US/moss/) winning, p
 - Sinhala Keyboard / Sinhalese (සිංහල) - Transliteration
 - Tamil Keyboard (தமிழ்) - Tamil-99, Inscript, Phonetic, Compact, Transliteration
 - Telugu Keyboard (తెలుగు) - Phonetic, Inscript, Transliteration, KaChaTaThaPa, Compact
-- Urdu Keyboard (اردو) - Transliteration
+- Urdu Keyboard (اردو) - Navees, Transliteration
 
 ## Contact Us
 - [Telegram](https://t.me/indickeyboard)
