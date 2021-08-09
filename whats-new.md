@@ -1,5 +1,11 @@
 # What's New
 
+## v3.4 - 2021 Aug 8
+- Updates to Arabic Layout
+- Fixed default theme bug
+- New Mobile Inscript layout for Malayalam
+- Updates to native numerals in several languages and layouts
+
 ## v3.3 - 2021 Jun 13
 - Language Support
   - Add Urdu Navees
