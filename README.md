@@ -2,7 +2,7 @@
 editLink: false
 ---
 ::: slot description
-Indic Keyboard is a [MOSS Award](https://www.mozilla.org/en-US/moss/) winning, privacy aware versatile keyboard for Android users who wish to use Indic and Indian languages to type messages, compose emails and generally prefer to use them in addition to English on their phone. You can use this application to type anywhere in your phone that you would normally type in English. It currently supports [23 languages](/#supported-languages) and 57 layouts.
+Indic Keyboard is a [MOSS Award](https://www.mozilla.org/en-US/moss/) winning, privacy aware versatile keyboard for Android users who wish to use Indic and Indian languages to type messages, compose emails and generally prefer to use them in addition to English on their phone. You can use this application to type anywhere in your phone that you would normally type in English. It currently supports [23 languages](/#supported-languages) and 60 layouts.
 :::
 
 ## Download
@@ -20,7 +20,7 @@ Indic Keyboard is a [MOSS Award](https://www.mozilla.org/en-US/moss/) winning, p
 - Hindi Keyboard (हिन्दी) - Inscript, Transliteration, Soni
 - Kannada Keyboard (ಕನ್ನಡ) - Phonetic, Inscript, Transliteration (Baraha), Compact, Anysoft
 - Kashmiri Keyboard (کأشُر) - Inscript, Transliteration
-- Malayalam Keyboard (മലയാളം) - Phonetic, Inscript, Transliteration (Mozhi), Swanalekha
+- Malayalam Keyboard (മലയാളം) - Phonetic, Compact, Inscript, Transliteration (Mozhi), Swanalekha, Mobile Inscript
 - Manipuri Keyboard / Methei Keyboard (মৈতৈলোন্) - Inscript
 - Maithili Keyboard (मैथिली) - Inscript
 - Marathi Keyboard (मराठी) - Transliteration
