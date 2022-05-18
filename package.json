@@ -1,7 +1,7 @@
 {
   "scripts": {
     "start": "nodemon --ext md,vue,styl --watch .vuepress --watch . --exec vuepress dev",
-    "build": "vuepress build"
+    "build": "export NODE_OPTIONS=--openssl-legacy-provider && vuepress build"
   },
   "devDependencies": {
     "nodemon": "^2.0.16",
