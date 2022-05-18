@@ -26,7 +26,7 @@ There are some other layouts as well, specific to the languages - do try them ou
 
 
 ## What all languages are supported ?
-Assamese (অসমীয়া), Arabic (العَرَبِيةُ‎‎), Bengali (বাংলা), Burmese (ဗမာ), English, Gujarati (ગુજરાતી), Hindi (हिन्दी), Kannada (ಕನ್ನಡ), Kashmiri (کأشُر), Malayalam (മലയാളം), Manipuri / Methei (মৈতৈলোন্), Maithili (मैथिली), Marathi (मराठी), Mon (ဘာသာ မန်;), Nepali (नेपाली), Oriya (ଓଡ଼ିଆ), Punjabi (ਪੰਜਾਬੀ), Sanskrit (संस्कृत), Santali (Devanagari script and Ol Chiki) (संताली / ᱥᱟᱱᱛᱟᱲᱤ), Sinhala / Sinhalese (සිංහල), Tamil (தமிழ்), Telugu (తెలుగు), Urdu (اردو)
+Assamese (অসমীয়া), Arabic (العَرَبِيةُ), Bengali (বাংলা), Burmese (ဗမာ), English, Gujarati (ગુજરાતી), Hindi (हिन्दी), Kannada (ಕನ್ನಡ), Kashmiri (کأشُر), Malayalam (മലയാളം), Manipuri / Methei (মৈতৈলোন্), Maithili (मैथिली), Marathi (मराठी), Mon (ဘာသာ မန်;), Nepali (नेपाली), Oriya (ଓଡ଼ିଆ), Punjabi (ਪੰਜਾਬੀ), Sanskrit (संस्कृत), Santali (Devanagari script and Ol Chiki) (संताली / ᱥᱟᱱᱛᱟᱲᱤ), Sinhala / Sinhalese (සිංහල), Tamil (தமிழ்), Telugu (తెలుగు), Urdu (اردو)
 
 ## Where can I get the source code ?
 
@@ -42,7 +42,7 @@ You can download from Google Play, F-Droid or via direct download link.
 ## Does the app have Gesture Typing / Glide Typing / Swipe?
 
 We do have a variant of Indic Keyboard with gesture typing (glide/swipe) enabled. You can get the app from Google Play Store. This version uses proprietary binaries from Google, we do not have access to the source code of that.
-- [Download Indic Keyboar Prime](https://play.google.com/store/apps/details?id=in.androidtweak.inputmethod.indic)
+- [Download Indic Keyboard Gesture Typing](https://play.google.com/store/apps/details?id=in.androidtweak.inputmethod.indic)
 
 
 ## Settings screen doesn't open in MiUI (Xiaomi devices)
