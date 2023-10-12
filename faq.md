@@ -52,3 +52,7 @@ This is due to a permission issue specific to MiUI. It can be fixed by giving Mi
 - Navigate to other permissions
 - Select Indic Keyboard from the list
 - Give permission for display pop-up windows while running in the background
+
+## Does/Will Indic Keyboard have ads?
+
+No.
