@@ -1,96 +1,108 @@
 {
-    "version": "v1.0.0",
-    "entity": {
-        "type": "individual",
-        "role": "owner",
-        "name": "Jishnu Mohan",
-        "email": "funding-indic-keyboard@jishnu.xyz",
-        "phone": "",
-        "description": "Developer and lead of the Indic Keyboard",
-        "webpageUrl": {
-            "url": "https://indic.app"
-        }
-    },
-    "projects": [
-        {
-            "guid": "indickeyboard",
-            "name": "Indic Keyboard",
-            "description": "Privacy aware versatile keyboard for Android users who wish to use Indic and Indian languages to type messages, compose emails and generally prefer to use them in addition to English on their phone.",
-            "webpageUrl": {
-                "url": "https://indic.app"
-            },
-            "repositoryUrl": {
-                "url": "https://gitlab.com/indicproject/indic-keyboard"
-            },
-            "licenses": [
-                "spdx:Apache-2.0"
-            ],
-            "tags": [
-                "android",
-                "language-tech",
-                "indic-languages",
-                "keyboard"
-            ]
-        }
-    ],
-    "funding": {
-        "channels": [
-            {
-                "guid": "bank",
-                "type": "bank",
-                "address": "funding-indic-keyboard@jishnu.xyz",
-                "description": "Please reach out if you'd like to wire, thanks!"
-            }
-        ],
-        "plans": [
-            {
-                "guid": "feature-development-monet",
-                "status": "active",
-                "name": "Upgrade Indic Keyboard UI",
-                "description": "Update visual style to support dynamic themes",
-                "amount": 0,
-                "currency": "USD",
-                "frequency": "one-time",
-                "channels": [
-                    "bank"
-                ]
-            },
-            {
-                "guid": "feature-development-clipboard",
-                "status": "active",
-                "name": "Clipboard Support",
-                "description": "Add support for clipboard",
-                "amount": 0,
-                "currency": "USD",
-                "frequency": "one-time",
-                "channels": [
-                    "bank"
-                ]
-            },
-            {
-                "guid": "feature-development-password-manager",
-                "status": "active",
-                "name": "Password Manager Support",
-                "description": "Integrate password managers via Android API",
-                "amount": 0,
-                "currency": "USD",
-                "frequency": "one-time",
-                "channels": [
-                    "bank"
-                ]
-            },
-            {
-                "guid": "feature-development-language-support",
-                "status": "active",
-                "name": "New layouts",
-                "description": "We have several language and layout requests from our users. Fund to support developement of those.",
-                "amount": 0,
-                "currency": "USD",
-                "frequency": "one-time",
-                "channels": [
-                    "bank"
-                ]
-            }
-        ]
+  "version": "v1.0.0",
+  "entity": {
+    "type": "individual",
+    "role": "owner",
+    "name": "Jishnu Mohan",
+    "email": "funding-indic-keyboard@jishnu.xyz",
+    "phone": "",
+    "description": "Developer and lead of the Indic Keyboard",
+    "webpageUrl": {
+      "url": "https://indic.app"
     }
+  },
+  "projects": [
+    {
+      "guid": "indickeyboard",
+      "name": "Indic Keyboard",
+      "description": "Privacy aware versatile keyboard for Android users who wish to use Indic and Indian languages to type messages, compose emails and generally prefer to use them in addition to English on their phone.",
+      "webpageUrl": {
+        "url": "https://indic.app"
+      },
+      "repositoryUrl": {
+        "url": "https://gitlab.com/indicproject/indic-keyboard"
+      },
+      "licenses": [
+        "spdx:Apache-2.0"
+      ],
+      "tags": [
+        "android",
+        "language-tech",
+        "indic-languages",
+        "keyboard"
+      ]
+    }
+  ],
+  "funding": {
+    "channels": [
+      {
+        "guid": "bank",
+        "type": "bank",
+        "address": "funding-indic-keyboard@jishnu.xyz",
+        "description": "Please reach out if you'd like to wire, thanks!"
+      }
+    ],
+    "plans": [
+      {
+        "guid": "feature-development-monet",
+        "status": "active",
+        "name": "Upgrade Indic Keyboard UI",
+        "description": "Update visual style to support dynamic themes",
+        "amount": 0,
+        "currency": "USD",
+        "frequency": "one-time",
+        "channels": [
+          "bank"
+        ]
+      },
+      {
+        "guid": "feature-development-clipboard",
+        "status": "active",
+        "name": "Clipboard Support",
+        "description": "Add support for clipboard",
+        "amount": 0,
+        "currency": "USD",
+        "frequency": "one-time",
+        "channels": [
+          "bank"
+        ]
+      },
+      {
+        "guid": "feature-development-password-manager",
+        "status": "active",
+        "name": "Password Manager Support",
+        "description": "Integrate password managers via Android API",
+        "amount": 0,
+        "currency": "USD",
+        "frequency": "one-time",
+        "channels": [
+          "bank"
+        ]
+      },
+      {
+        "guid": "feature-development-language-support",
+        "status": "active",
+        "name": "New layouts",
+        "description": "We have several language and layout requests from our users. Fund to support developement of those.",
+        "amount": 0,
+        "currency": "USD",
+        "frequency": "one-time",
+        "channels": [
+          "bank"
+        ]
+      }
+    ],
+    "history": [
+      {
+        "year": 2018,
+        "currency": "USD",
+        "description": "Mozilla Open Source Support Awards"
+      },
+      {
+        "year": 2014,
+        "currency": "INR",
+        "description": "Ministry of Electronics and Information Technology (MEITy), Govt. of India via ICFOSS"
+      }
+    ]
+  }
 }
