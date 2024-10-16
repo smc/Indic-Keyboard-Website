@@ -1,5 +1,18 @@
 # What's New
 
+## v3.6.1 - 2024 Oct 8
+- Fix app crash when switching to certain layouts
+
+## v3.6 - 2024 Aug 30
+- Updated emojis (contributed by @Vivekkj)
+- Support for newer versions of android (contributed by @mujeebcpy)
+- Varnam integration (WIP for newer Android versions) (contributed by @subins2000)
+
+## v3.5 - 2023 Feb 5
+- Fix Bengali Inscript layout (contributed by @MayuraVerma)
+- Add Poorna layout (contributed by @mujeebcpy)
+- Support newer versions of Android
+
 ## v3.4 - 2021 Aug 8
 - Updates to Arabic Layout
 - Fixed default theme bug
