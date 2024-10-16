@@ -44,7 +44,7 @@
     ],
     "plans": [
       {
-        "guid": "feature-development-monet",
+        "guid": "feature-monet",
         "status": "active",
         "name": "Upgrade Indic Keyboard UI",
         "description": "Update visual style to support dynamic themes",
@@ -56,7 +56,7 @@
         ]
       },
       {
-        "guid": "feature-development-clipboard",
+        "guid": "feature-clipboard",
         "status": "active",
         "name": "Clipboard Support",
         "description": "Add support for clipboard",
@@ -68,7 +68,7 @@
         ]
       },
       {
-        "guid": "feature-development-password-manager",
+        "guid": "feature-password-manager",
         "status": "active",
         "name": "Password Manager Support",
         "description": "Integrate password managers via Android API",
@@ -80,7 +80,7 @@
         ]
       },
       {
-        "guid": "feature-development-language-support",
+        "guid": "feature-language-support",
         "status": "active",
         "name": "New layouts",
         "description": "We have several language and layout requests from our users. Fund to support developement of those.",
