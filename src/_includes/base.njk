@@ -3,8 +3,18 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>{% if title %}{{ title }} | {% endif %}Indic Keyboard</title>
-  <meta name="description" content="{{ description or ('Indic Keyboard brings ' + home.stats.languages + ' languages and ' + home.stats.layouts + ' layouts to Android, with gesture typing, word prediction and transliteration.') }}">
+{%- set pageTitle = (title + ' | ' if title else '') + 'Indic Keyboard' -%}
+{%- set pageDescription = description or ('Indic Keyboard brings ' + home.stats.languages + ' languages and ' + home.stats.layouts + ' layouts to Android, with gesture typing, word prediction and transliteration.') %}
+  <title>{{ pageTitle }}</title>
+  <meta name="description" content="{{ pageDescription }}">
+  <link rel="canonical" href="{{ site.url }}{{ page.url | replace('index.html', '') }}">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Indic Keyboard">
+  <meta property="og:title" content="{{ pageTitle }}">
+  <meta property="og:description" content="{{ pageDescription }}">
+  <meta property="og:url" content="{{ site.url }}{{ page.url | replace('index.html', '') }}">
+  <meta property="og:image" content="{{ site.url }}/logo_192.png">
+  <meta name="twitter:card" content="summary">
   <meta name="author" content="Jishnu Mohan">
   <meta name="theme-color" content="#2A3854">
   <link rel="icon" type="image/png" sizes="32x32" href="/logo_32.png">
