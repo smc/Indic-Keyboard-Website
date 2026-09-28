@@ -33,11 +33,11 @@ jobs:
       # base_path is "/<repo>" on github.io and empty on a custom domain.
       - run: npm run build
         env:
-          VUEPRESS_BASE: ${{ steps.pages.outputs.base_path }}/
+          BASE_PATH: ${{ steps.pages.outputs.base_path }}/
 
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: public
+          path: _site
 
   deploy:
     needs: build

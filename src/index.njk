@@ -1,0 +1,289 @@
+---
+layout: base.njk
+pageClass: ik-home
+script: home.js
+permalink: /index.html
+---
+{% set stats = home.stats %}
+{% set hero = home.hero[0] %}
+{% set links = {
+  fdroid: 'https://f-droid.org/en/packages/org.smc.inputmethod.indic/',
+  play: 'https://play.google.com/store/apps/details?id=org.smc.inputmethod.indic',
+  apk: 'https://j15h.nu/downloads/releases/'
+} %}
+{% set qwerty = [
+  { indent: 0, keys: 'q w e r t y u i o p' },
+  { indent: 23, keys: 'a s d f g h j k l' },
+  { indent: 69, keys: 'z x c v b n m' }
+] %}
+
+<section id="top" class="ik-hero">
+  <div class="ik-hero__text">
+    <a href="#new" class="ik-pill"><span>New</span> Version 4.0 is here</a>
+    <h1>Type in your language, everywhere.</h1>
+    <p>A free, open-source keyboard for Android. {{ stats.languages }} languages, {{ stats.layouts }} layouts, gesture typing and companion typing. No ads, no tracking.</p>
+    <div class="ik-actions">
+      <a href="{{ links.fdroid }}" class="ik-btn ik-btn--dark">Get it on F-Droid</a>
+      <a href="{{ links.play }}" class="ik-btn ik-btn--outline">Google Play</a>
+    </div>
+  </div>
+
+  <div class="hero-keyboard" data-hero>
+    <div class="hero-keyboard__top">
+      <span data-hero-label>{{ hero.name }}{% if hero.layout %} · {{ hero.layout }}{% endif %}</span>
+      <span>{{ stats.languages }} languages</span>
+    </div>
+    <div class="hero-keyboard__field" data-hero-field lang="{{ hero.language }}" dir="{{ hero.dir }}"><span data-hero-typed>{{ hero.native }}</span><span class="hero-keyboard__caret"></span></div>
+    <div class="hero-keyboard__strip" data-hero-strip>
+      <span>{{ home.hero[home.hero.length - 1].native }}</span>
+      <span class="is-current">{{ hero.native }}</span>
+      <span>{{ home.hero[1].native }}</span>
+    </div>
+    <div data-hero-rows>
+      {% for row in hero.rows %}
+      <div class="hero-keyboard__row">
+        {% for key in row %}<span class="hero-keyboard__key" lang="{{ hero.language }}">{{ key }}</span>{% endfor %}
+      </div>
+      {% endfor %}
+    </div>
+    <div class="hero-keyboard__row">
+      <span class="hero-keyboard__key hero-keyboard__key--fn">?123</span>
+      <span class="hero-keyboard__key hero-keyboard__key--space" data-hero-space lang="{{ hero.language }}">{{ hero.native }}</span>
+      <span class="hero-keyboard__key hero-keyboard__key--enter" aria-hidden="true">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 5v7H6"/><path d="M10 8l-4 4 4 4"/></svg>
+      </span>
+    </div>
+    <div class="hero-keyboard__dots" role="group" aria-label="Choose a keyboard language" data-hero-dots hidden>
+      {% for h in home.hero %}
+      <button type="button" aria-label="Show {{ h.name }}" aria-pressed="{{ 'true' if loop.first else 'false' }}"><span></span></button>
+      {% endfor %}
+    </div>
+    <script type="application/json" data-hero-data>{{ home.hero | json | safe }}</script>
+  </div>
+</section>
+
+<section aria-label="Indic Keyboard in numbers" class="ik-section">
+  <div class="ik-stats">
+    {% for s in [
+      { value: stats.languages, label: 'Languages', note: 'From Assamese to Urdu, and beyond India' },
+      { value: stats.layouts, label: 'Keyboard layouts', note: 'Inscript, phonetic, transliteration and more' },
+      { value: stats.scripts, label: 'Scripts', note: 'Native scripts, from Devanagari to Warang Citi' },
+      { value: 0, label: 'Ads and trackers', note: 'Free and open source, always' }
+    ] %}
+    <div>
+      <div class="ik-stats__value">{{ s.value }}</div>
+      <div class="ik-stats__label">{{ s.label }}</div>
+      <div class="ik-stats__note">{{ s.note }}</div>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+
+<section id="new" class="ik-section">
+  <div class="ik-new">
+    <div class="ik-new__head">
+      <div>
+        <div class="ik-eyebrow">New in 4.0</div>
+        <h2>Our biggest update yet.</h2>
+        <p>{{ stats.newLanguages }} new languages, {{ stats.newScripts }} more scripts, companion typing, and gesture typing that works on transliteration layouts.</p>
+      </div>
+      <a href="/whats-new.html" class="ik-btn ik-btn--deep">Release notes</a>
+    </div>
+    <ul class="ik-new__langs">
+      {% for l in home.languages %}{% if l.isNew %}
+      <li>
+        <span class="ik-new__native" lang="{{ l.code }}" dir="{{ l.dir }}">{{ l.native }}</span>
+        <span class="ik-new__name">{{ l.name }}</span>
+        <span class="ik-new__script">{{ l.scripts | join(', ') }}</span>
+      </li>
+      {% endif %}{% endfor %}
+    </ul>
+    <ul class="ik-new__highlights">
+      {% for h in [
+        { title: 'Companion typing', body: 'Type your language from the English keyboard, with no layout switching.' },
+        { title: 'Gesture typing, built in', body: 'Swipe to type, now in the main app. It works on transliteration layouts too, a first for any keyboard.' },
+        { title: 'Predictive transliteration', body: 'Varnam suggestions as you type, with language packs on demand.' },
+        { title: 'Next-word prediction', body: 'Suggestions for the next word in 20 languages.' },
+        { title: stats.newScripts + ' more scripts', body: (home.newScripts | listJoin) + '.' },
+        { title: stats.newLayouts + ' new layouts', body: 'Including Telugu Apple, Punjabi Jhelum, Urdu Windows and three for Marathi.' },
+        { title: 'Material 3 themes', body: 'Material, Modern and Classic families with a live preview.' },
+        { title: 'Clipboard and hardware keyboards', body: 'Paste recent copies, or plug in a physical keyboard.' },
+        { title: 'Password manager', body: 'Fill logins from your password manager right in the suggestion strip.' }
+      ] %}
+      <li><strong>{{ h.title }}</strong><span>{{ h.body }}</span></li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>
+
+<section id="features" class="ik-section">
+  <div class="ik-section__head">
+    <div class="ik-eyebrow">Features</div>
+    <h2>Everything a keyboard should do, in your language.</h2>
+  </div>
+
+  <div class="ik-card ik-companion">
+    <div class="ik-companion__text">
+      <span class="badge">New in 4.0</span>
+      <h3>Companion typing</h3>
+      <p>Set a language as your companion and stop switching layouts. Keep typing on the English keyboard, and transliterated words in your language show up right in the suggestions.</p>
+    </div>
+    <div class="ik-companion__demo" aria-hidden="true">
+      <div class="ik-companion__field">Sending the photos now, nanni<span class="ik-caret"></span></div>
+      <div class="ik-companion__strip">
+        <span>nanni</span>
+        <span lang="ml" class="is-current">നന്ദി</span>
+        <span>nanny</span>
+      </div>
+      {% for row in qwerty %}
+      <div class="ik-mini-row" style="padding-left: {{ row.indent }}px">{% for k in row.keys.split(' ') %}<span>{{ k }}</span>{% endfor %}</div>
+      {% endfor %}
+      <div class="ik-companion__caption">English layout, Malayalam as companion</div>
+    </div>
+  </div>
+
+  <div class="ik-grid ik-grid--2">
+    <div class="ik-card ik-feature-big">
+      <div class="ik-gesture" aria-hidden="true">
+        {% for row in qwerty %}
+        <div class="ik-mini-row" style="padding-left: {{ row.indent }}px">{% for k in row.keys.split(' ') %}<span>{{ k }}</span>{% endfor %}</div>
+        {% endfor %}
+        <svg viewBox="0 0 454 156" fill="none"><path d="M319 132 L43 78 L365 132 L43 78 L89 78 L204 24 L112 24" stroke="#2A3854" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" opacity="0.75"/><circle cx="112" cy="24" r="9" fill="#2A3854"/></svg>
+      </div>
+      <h3>Gesture typing, even in transliteration</h3>
+      <p>Glide across the keys instead of tapping. A first for any keyboard: swipe <code>namaste</code> on a transliteration layout and get <span lang="hi">नमस्ते</span>.</p>
+    </div>
+    <div class="ik-card ik-feature-big">
+      <ul class="ik-translit" aria-hidden="true">
+        {% for t in [
+          { in: 'namaste', out: 'नमस्ते', lang: 'hi' },
+          { in: 'vanakkam', out: 'வணக்கம்', lang: 'ta' },
+          { in: 'nanni', out: 'നന്ദി', lang: 'ml' }
+        ] %}
+        <li>
+          <code>{{ t.in }}</code>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#2A3854" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg>
+          <span lang="{{ t.lang }}">{{ t.out }}</span>
+        </li>
+        {% endfor %}
+      </ul>
+      <h3>Predictive transliteration</h3>
+      <p>Type how a word sounds in English letters. Powered by Varnam, it learns your words and suggests the right spelling.</p>
+    </div>
+  </div>
+
+  <ul class="ik-grid ik-grid--4 ik-list">
+    {% for f in [
+      { title: 'Word suggestions and spell check', body: 'Dictionaries for every major language, with spell check as you type.' },
+      { title: 'Next-word prediction', body: 'Suggestions for what comes next, in 20 languages.' },
+      { title: 'Password manager', body: 'Logins from your password manager appear right in the suggestion strip.' },
+      { title: 'Clipboard', body: 'Paste recent copies straight from the keyboard.' },
+      { title: 'Themes', body: 'Material, Modern and Classic families, light or dark, previewed live.' },
+      { title: 'Emoji', body: 'Search, recents and a default skin tone of your choice.' },
+      { title: 'Physical keyboards', body: 'Plug in a hardware keyboard and keep typing in your layout.' },
+      { title: 'Make it yours', body: 'Resize the keyboard, add a number row, and swipe the space bar to move the cursor.' }
+    ] %}
+    <li class="ik-card ik-feature"><h3>{{ f.title }}</h3><p>{{ f.body }}</p></li>
+    {% endfor %}
+  </ul>
+</section>
+
+<section class="ik-section">
+  <div class="ik-section__head">
+    <div class="ik-eyebrow">Ways to type</div>
+    <h2>Pick the layout that fits your hands.</h2>
+  </div>
+  <ul class="ik-grid ik-grid--4 ik-list">
+    {% for w in [
+      { title: 'Transliteration', body: 'Type with English letters and watch them turn into your script.', example: 'namaste → नमस्ते', lang: 'hi' },
+      { title: 'Inscript', body: 'The Government of India standard. If you know it on desktop, it works here.', example: 'ा ि ी ु ू', lang: 'hi' },
+      { title: 'Phonetic', body: 'Letters sit where their English sound-alikes are, so they are easy to find.', example: 'a → അ   s → സ', lang: 'ml' },
+      { title: 'Compact', body: 'No shift key. Long-press a letter for every other form.', example: 'க → கா கி கு', lang: 'ta' }
+    ] %}
+    <li class="ik-card ik-way">
+      <div class="ik-way__example" lang="{{ w.lang }}">{{ w.example }}</div>
+      <h3>{{ w.title }}</h3>
+      <p>{{ w.body }}</p>
+    </li>
+    {% endfor %}
+  </ul>
+</section>
+
+<section id="languages" class="ik-section">
+  <div class="ik-section__head">
+    <div class="ik-eyebrow">Languages</div>
+    <h2>{{ stats.languages }} languages, {{ stats.scripts }} scripts.</h2>
+  </div>
+  <div class="lang-explorer" data-explorer>
+    <div class="lang-explorer__controls" data-explorer-controls hidden>
+      <div class="lang-explorer__filters" role="group" aria-label="Filter languages">
+        {% for f in [
+          { id: 'all', label: 'All ' + stats.languages },
+          { id: 'new', label: 'New' },
+          { id: 'north', label: 'North' },
+          { id: 'west', label: 'West' },
+          { id: 'east', label: 'East and North-East' },
+          { id: 'south', label: 'South and Sri Lanka' },
+          { id: 'beyond', label: 'Beyond India' }
+        ] %}
+        <button type="button" data-filter="{{ f.id }}" aria-pressed="{{ 'true' if loop.first else 'false' }}"{% if loop.first %} class="is-on"{% endif %}>{{ f.label }}</button>
+        {% endfor %}
+      </div>
+      <label class="lang-explorer__search">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg>
+        <span class="visually-hidden">Search languages</span>
+        <input type="search" placeholder="Search, e.g. Tulu or ತುಳು" data-explorer-search>
+      </label>
+    </div>
+
+    <ul class="lang-explorer__grid">
+      {% for l in home.languages %}
+      <li class="lang-card" data-region="{{ l.region }}" data-new="{{ 'true' if l.isNew else 'false' }}" data-search="{{ (l.name + ' ' + l.native + ' ' + (l.scripts | join(' '))) | lower }}">
+        <div class="lang-card__head">
+          <span class="lang-card__native" lang="{{ l.code }}" dir="{{ l.dir }}">{{ l.native }}</span>
+          {% if l.isNew %}<span class="badge">New</span>{% endif %}
+        </div>
+        <div>
+          <div class="lang-card__name">{{ l.name }}</div>
+          <div class="lang-card__scripts">{{ l.scripts | join(', ') if l.scripts.length else 'Latin' }}</div>
+        </div>
+        <ul class="lang-card__layouts">
+          {% for x in l.layouts %}<li>{{ x.name }}</li>{% endfor %}
+        </ul>
+      </li>
+      {% endfor %}
+    </ul>
+
+    <button type="button" class="lang-explorer__more" data-explorer-more hidden>Show all {{ stats.languages }} languages</button>
+    <p class="lang-explorer__empty" data-explorer-empty hidden>No match yet. <a href="https://t.me/indickeyboard">Tell us which language you need.</a></p>
+  </div>
+</section>
+
+<section class="ik-section ik-grid ik-grid--2">
+  <div class="ik-card ik-trust">
+    <h2>Private by design.</h2>
+    <p>No ads, no analytics, no account. What you type stays on your phone. The only thing the app downloads is a language pack, and only when you ask for one.</p>
+    <a href="/privacy.html">Privacy policy</a>
+  </div>
+  <div class="ik-card ik-trust">
+    <h2>Built in the open.</h2>
+    <p>Apache 2.0 licensed and a <a href="https://www.mozilla.org/en-US/moss/">MOSS Award</a> winner. Built by Jishnu Mohan and contributors.</p>
+    <div class="ik-trust__links">
+      <a href="https://gitlab.com/indicproject/indic-keyboard">Source code</a>
+    </div>
+  </div>
+</section>
+
+<section id="download" class="ik-section">
+  <div class="ik-download">
+    <div>
+      <h2>Get Indic Keyboard</h2>
+      <p>Free, forever. Works on Android phones and tablets.</p>
+    </div>
+    <div class="ik-download__links">
+      <a href="{{ links.fdroid }}" class="ik-btn ik-btn--light">F-Droid</a>
+      <a href="{{ links.play }}" class="ik-btn ik-btn--ghost">Google Play</a>
+      <a href="{{ links.apk }}" class="ik-btn ik-btn--ghost">Direct download (APK)</a>
+    </div>
+  </div>
+</section>

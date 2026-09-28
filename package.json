@@ -1,10 +1,11 @@
 {
+  "private": true,
   "scripts": {
-    "start": "nodemon --ext md,vue,styl --watch .vuepress --watch . --exec vuepress dev",
-    "build": "export NODE_OPTIONS=--openssl-legacy-provider && vuepress build"
+    "start": "eleventy --serve",
+    "build": "eleventy",
+    "data": "node scripts/generate-data.js"
   },
   "devDependencies": {
-    "nodemon": "^2.0.16",
-    "vuepress": "^1.9.7"
+    "@11ty/eleventy": "^3.1.6"
   }
 }

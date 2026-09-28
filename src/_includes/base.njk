@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% if title %}{{ title }} | {% endif %}Indic Keyboard</title>
+  <meta name="description" content="{{ description or ('Indic Keyboard brings ' + home.stats.languages + ' languages and ' + home.stats.layouts + ' layouts to Android, with gesture typing, word prediction and transliteration.') }}">
+  <meta name="author" content="Jishnu Mohan">
+  <meta name="theme-color" content="#2A3854">
+  <link rel="icon" type="image/png" sizes="32x32" href="/logo_32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/logo_16.png">
+  <link rel="icon" type="image/svg+xml" sizes="any" href="/logo.svg">
+  <link rel="apple-touch-icon" sizes="192x192" href="/logo_192.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500&family=Noto+Sans:wght@400;500;600&family=Noto+Sans+Mono&family=Noto+Sans+Devanagari:wght@400;500&family=Noto+Sans+Malayalam:wght@400;500&family=Noto+Sans+Tamil:wght@400;500&family=Noto+Sans+Telugu:wght@400;500&family=Noto+Sans+Kannada:wght@400;500&family=Noto+Sans+Bengali:wght@400;500&family=Noto+Sans+Gujarati:wght@400;500&family=Noto+Sans+Gurmukhi:wght@400;500&family=Noto+Sans+Oriya:wght@400;500&family=Noto+Sans+Sinhala:wght@400;500&family=Noto+Sans+Myanmar:wght@400;500&family=Noto+Naskh+Arabic:wght@400;500&family=Noto+Sans+Ol+Chiki&family=Noto+Sans+Kaithi&family=Noto+Sans+Sharada&family=Noto+Sans+Saurashtra&family=Noto+Sans+Hanifi+Rohingya&family=Noto+Sans+Syloti+Nagri&family=Noto+Sans+Meetei+Mayek&family=Noto+Sans+Warang+Citi&display=swap">
+  <link rel="stylesheet" href="/assets/site.css">
+</head>
+<body>
+  <div class="ik-page {{ pageClass }}">
+    {% include "header.njk" %}
+    <main>
+      {{ content | safe }}
+    </main>
+    {% include "footer.njk" %}
+  </div>
+  <button type="button" class="ik-to-top" aria-label="Back to top" title="Back to top" hidden data-to-top>
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20V5"/><path d="M6 11l6-6 6 6"/></svg>
+  </button>
+  <script src="/assets/site.js" defer></script>
+  {% if script %}<script src="/assets/{{ script }}" defer></script>{% endif %}
+</body>
+</html>

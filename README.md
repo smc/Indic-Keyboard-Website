@@ -1,40 +1,35 @@
----
-editLink: false
----
-::: slot description
-Indic Keyboard is a [MOSS Award](https://www.mozilla.org/en-US/moss/) winning, privacy aware versatile keyboard for Android users who wish to use Indic and Indian languages to type messages, compose emails and generally prefer to use them in addition to English on their phone. You can use this application to type anywhere in your phone that you would normally type in English. It currently supports [23 languages](/#supported-languages) and 60 layouts.
-:::
+# Indic Keyboard website
 
-## Download
-- [F-Droid](https://f-droid.org/en/packages/org.smc.inputmethod.indic/)
-- [Google Play Store](https://play.google.com/store/apps/details?id=org.smc.inputmethod.indic)
-- [Direct Download](https://releases.smc.org.in/indic-keyboard/)
+The site for [Indic Keyboard](https://gitlab.com/indicproject/indic-keyboard), built with [Eleventy](https://www.11ty.dev/).
 
-## Supported Languages and Layouts
-- Assamese Keyboard (অসমীয়া) - Inscript, Transliteration
-- Arabic Keyboard (العَرَبِيةُ‎‎)
-- Bengali Keyboard (বাংলা) - Probhat, Avro, Inscript, Compact
-- Burmese Keyboard (ဗမာ) - xkb
-- English
-- Gujarati Keyboard (ગુજરાતી) - Phonetic, Inscript, Transliteration
-- Hindi Keyboard (हिन्दी) - Inscript, Transliteration, Soni
-- Kannada Keyboard (ಕನ್ನಡ) - Phonetic, Inscript, Transliteration (Baraha), Compact, Anysoft
-- Kashmiri Keyboard (کأشُر) - Inscript, Transliteration
-- Malayalam Keyboard (മലയാളം) - Phonetic, Compact, Inscript, Transliteration (Mozhi), Swanalekha, Mobile Inscript
-- Manipuri Keyboard / Methei Keyboard (মৈতৈলোন্) - Inscript
-- Maithili Keyboard (मैथिली) - Inscript
-- Marathi Keyboard (मराठी) - Transliteration
-- Mon Keyboard (ဘာသာ မန်;)
-- Nepali Keyboard (नेपाली) - Phonetic, Traditional, Transliteration, Inscript
-- Oriya Keyboard (ଓଡ଼ିଆ) - Inscript, Transliteration, Lekhani
-- Punjabi Keyboard (ਪੰਜਾਬੀ) - Phonetic, Inscript, Transliteration
-- Sanskrit Keyboard (संस्कृत) - Transliteration
-- Santali Keyboard (Devanagari script and Ol Chiki) (संताली / ᱥᱟᱱᱛᱟᱲᱤ) - Inscript, Ol Chiki, Ol Chiki Compact
-- Sinhala Keyboard / Sinhalese (සිංහල) - Transliteration
-- Tamil Keyboard (தமிழ்) - Tamil-99, Inscript, Phonetic, Compact, Transliteration
-- Telugu Keyboard (తెలుగు) - Phonetic, Inscript, Transliteration, KaChaTaThaPa, Compact
-- Urdu Keyboard (اردو) - Navees, Transliteration
+## Develop
 
-## Contact Us
-- [Telegram](https://t.me/indickeyboard)
-- [Email](mailto:indicapp@jishnu.xyz)
+Use the Node version in `.nvmrc`, then:
+
+```sh
+npm install
+npm start        # dev server with live reload
+npm run build    # writes the site to _site/
+```
+
+## Language data
+
+The home page counts, language list and hero keyboards come from `src/_data/home.json`, generated from a local checkout of the app:
+
+```sh
+INDIC_KEYBOARD_REPO=~/git/indic-keyboard npm run data
+```
+
+It compares against the `compareRef` tag in `data/meta.json` to decide what is new (override with `INDIC_KEYBOARD_COMPARE_REF`). English names, regions, layout names the app does not spell out, and the hero layouts live in `data/meta.json`. The script warns about anything it cannot name, so new languages and layouts in the app show up as a to-do list. Commit the regenerated `home.json`.
+
+## Layout
+
+- `src/index.njk` home page, `src/assets/home.js` its hero keyboard and language filter
+- `src/whats-new.md` release notes, one `## version - date` heading and list per release
+- `src/privacy.md`, `src/code-of-conduct.md` plain text pages
+- `src/_includes/` layouts, header and footer; `src/assets/site.css` all styles
+- `src/static/` copied to the site root (icons, `funding.json`)
+
+## Deploy
+
+Pushing to `master` on GitHub builds and deploys to GitHub Pages (`.github/workflows/deploy.yml`).

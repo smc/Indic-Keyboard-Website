@@ -1,0 +1,1322 @@
+{
+  "source": {
+    "commit": "cd4ec9ba",
+    "comparedWith": "v3.6.1"
+  },
+  "stats": {
+    "languages": 31,
+    "layouts": 96,
+    "scripts": 20,
+    "newLanguages": 8,
+    "newLayouts": 34,
+    "newScripts": 7
+  },
+  "scripts": [
+    "Arabic",
+    "Bengali-Assamese",
+    "Devanagari",
+    "Gujarati",
+    "Gurmukhi",
+    "Hanifi Rohingya",
+    "Kaithi",
+    "Kannada",
+    "Malayalam",
+    "Meetei Mayek",
+    "Myanmar",
+    "Odia",
+    "Ol Chiki",
+    "Saurashtra",
+    "Sharada",
+    "Sinhala",
+    "Syloti Nagri",
+    "Tamil",
+    "Telugu",
+    "Warang Citi"
+  ],
+  "newScripts": [
+    "Hanifi Rohingya",
+    "Kaithi",
+    "Meetei Mayek",
+    "Saurashtra",
+    "Sharada",
+    "Syloti Nagri",
+    "Warang Citi"
+  ],
+  "languages": [
+    {
+      "code": "ar",
+      "name": "Arabic",
+      "native": "العربية",
+      "dir": "rtl",
+      "region": "beyond",
+      "scripts": [
+        "Arabic"
+      ],
+      "isNew": false,
+      "layouts": [
+        {
+          "id": "ar",
+          "name": "Arabic",
+          "isNew": false
+        }
+      ]
+    },
+    {
+      "code": "as",
+      "name": "Assamese",
+      "native": "অসমীয়া",
+      "dir": "ltr",
+      "region": "east",
+      "scripts": [
+        "Bengali-Assamese"
+      ],
+      "isNew": false,
+      "layouts": [
+        {
+          "id": "assamese_inscript",
+          "name": "Inscript",
+          "isNew": false
+        },
+        {
+          "id": "as-transliteration",
+          "name": "Transliteration",
+          "isNew": false
+        },
+        {
+          "id": "assamese_phonetic",
+          "name": "Phonetic",
+          "isNew": true
+        },
+        {
+          "id": "varnam-as",
+          "name": "Predictive",
+          "isNew": true
+        }
+      ]
+    },
+    {
+      "code": "bn",
+      "name": "Bengali",
+      "native": "বাংলা",
+      "dir": "ltr",
+      "region": "east",
+      "scripts": [
+        "Bengali-Assamese"
+      ],
+      "isNew": false,
+      "layouts": [
+        {
+          "id": "bengali",
+          "name": "Bengali",
+          "isNew": false
+        },
+        {
+          "id": "bengali_probhat",
+          "name": "Probhat",
+          "isNew": false
+        },
+        {
+          "id": "bengali_inscript",
+          "name": "Inscript",
+          "isNew": false
+        },
+        {
+          "id": "bn-avro",
+          "name": "Avro",
+          "isNew": false
+        },
+        {
+          "id": "varnam-bn",
+          "name": "Predictive",
+          "isNew": true
+        }
+      ]
+    },
+    {
+      "code": "bho",
+      "name": "Bhojpuri",
+      "native": "भोजपुरी",
+      "dir": "ltr",
+      "region": "north",
+      "scripts": [
+        "Devanagari",
+        "Kaithi"
+      ],
+      "isNew": true,
+      "layouts": [
+        {
+          "id": "hindi_inscript",
+          "name": "Inscript",
+          "isNew": true
+        },
+        {
+          "id": "kaithi",
+          "name": "Kaithi",
+          "isNew": true
+        }
+      ]
+    },
+    {
+      "code": "my",
+      "name": "Burmese",
+      "native": "ဗမာ",
+      "dir": "ltr",
+      "region": "beyond",
+      "scripts": [
+        "Myanmar"
+      ],
+      "isNew": false,
+      "layouts": [
+        {
+          "id": "burmese",
+          "name": "Burmese",
+          "isNew": false
+        }
+      ]
+    },
+    {
+      "code": "en",
+      "name": "English",
+      "native": "English",
+      "dir": "ltr",
+      "region": "beyond",
+      "scripts": [],
+      "isNew": false,
+      "layouts": [
+        {
+          "id": "en_US",
+          "name": "QWERTY",
+          "isNew": false
+        }
+      ]
+    },
+    {
+      "code": "gu",
+      "name": "Gujarati",
+      "native": "ગુજરાતી",
+      "dir": "ltr",
+      "region": "west",
+      "scripts": [
+        "Gujarati"
+      ],
+      "isNew": false,
+      "layouts": [
+        {
+          "id": "gujarati",
+          "name": "Phonetic",
+          "isNew": false
+        },
+        {
+          "id": "gujarati_inscript",
+          "name": "Inscript",
+          "isNew": false
+        },
+        {
+          "id": "gu-transliteration",
+          "name": "Transliteration",
+          "isNew": false
+        },
+        {
+          "id": "varnam-gu",
+          "name": "Predictive",
+          "isNew": true
+        }
+      ]
+    },
+    {
+      "code": "hi",
+      "name": "Hindi",
+      "native": "हिन्दी",
+      "dir": "ltr",
+      "region": "north",
+      "scripts": [
+        "Devanagari"
+      ],
+      "isNew": false,
+      "layouts": [
+        {
+          "id": "hindi",
+          "name": "Hindi",
+          "isNew": false
+        },
+        {
+          "id": "hindi_inscript",
+          "name": "Inscript",
+          "isNew": false
+        },
+        {
+          "id": "hi-soni",
+          "name": "Soni",
+          "isNew": false
+        },
+        {
+          "id": "hi-transliteration",
+          "name": "Transliteration",
+          "isNew": false
+        },
+        {
+          "id": "hindi_compact",
+          "name": "Compact",
+          "isNew": true
+        },
+        {
+          "id": "varnam-hi",
+          "name": "Predictive",
+          "isNew": true
+        }
+      ]
+    },
+    {
+      "code": "hoc",
+      "name": "Ho",
+      "native": "𑢹𑣉𑣉 𑣎𑣋𑣜",
+      "dir": "ltr",
+      "region": "east",
+      "scripts": [
+        "Warang Citi"
+      ],
+      "isNew": true,
+      "layouts": [
+        {
+          "id": "warang_citi",
+          "name": "Warang Citi",
+          "isNew": true
+        }
+      ]
+    },
+    {
+      "code": "kn",
+      "name": "Kannada",
+      "native": "ಕನ್ನಡ",
+      "dir": "ltr",
+      "region": "south",
+      "scripts": [
+        "Kannada"
+      ],
+      "isNew": false,
+      "layouts": [
+        {
+          "id": "kannada",
+          "name": "KaGaPa",
+          "isNew": false
+        },
+        {
+          "id": "kannada_inscript",
+          "name": "Inscript",
+          "isNew": false
+        },
+        {
+          "id": "kannada_compact",
+          "name": "Compact",
+          "isNew": false
+        },
+        {
+          "id": "kannada_anysoft_inscript",
+          "name": "Inscript Mobile",
+          "isNew": false
+        },
+        {
+          "id": "kn-transliteration",
+          "name": "Transliteration",
+          "isNew": false
+        },
+        {
+          "id": "varnam-kn",
+          "name": "Predictive",
+          "isNew": true
+        }
+      ]
+    },
+    {
+      "code": "ks",
+      "name": "Kashmiri",
+      "native": "کأشُر",
+      "dir": "rtl",
+      "region": "north",
+      "scripts": [
+        "Arabic",
+        "Devanagari",
+        "Sharada"
+      ],
+      "isNew": false,
+      "layouts": [
+        {
+          "id": "ks-Kbd",
+          "name": "Transliteration",
+          "isNew": false
+        },
+        {
+          "id": "kashmiri_inscript",
+          "name": "Inscript",
+          "isNew": false
+        },
+        {
+          "id": "sharada",
+          "name": "Sharada",
+          "isNew": true
+        }
+      ]
+    },
+    {
+      "code": "gom",
+      "name": "Konkani",
+      "native": "कोंकणी",
+      "dir": "ltr",
+      "region": "west",
+      "scripts": [
+        "Devanagari"
+      ],
+      "isNew": true,
+      "layouts": [
+        {
+          "id": "konkani_inscript",
+          "name": "Inscript",
+          "isNew": true
+        }
+      ]
+    },
+    {
+      "code": "mai",
+      "name": "Maithili",
+      "native": "मैथिली",
+      "dir": "ltr",
+      "region": "north",
+      "scripts": [
+        "Kaithi",
+        "Devanagari"
+      ],
+      "isNew": false,
+      "layouts": [
+        {
+          "id": "kaithi",
+          "name": "Kaithi",
+          "isNew": true
+        },
+        {
+          "id": "maithili_inscript",
+          "name": "Inscript",
+          "isNew": false
+        }
+      ]
+    },
+    {
+      "code": "ml",
+      "name": "Malayalam",
+      "native": "മലയാളം",
+      "dir": "ltr",
+      "region": "south",
+      "scripts": [
+        "Malayalam"
+      ],
+      "isNew": false,
+      "layouts": [
+        {
+          "id": "malayalam",
+          "name": "Lalitha",
+          "isNew": false
+        },
+        {
+          "id": "malayalam_compact",
+          "name": "Compact",
+          "isNew": false
+        },
+        {
+          "id": "malayalam_inscript",
+          "name": "Inscript",
+          "isNew": false
+        },
+        {
+          "id": "malayalam_poorna_inscript",
+          "name": "Poorna Inscript",
+          "isNew": false
+        },
+        {
+          "id": "malayalam_mobile_inscript",
+          "name": "Mobile Inscript",
+          "isNew": false
+        },
+        {
+          "id": "ml-transliteration",
+          "name": "Transliteration",
+          "isNew": false
+        },
+        {
+          "id": "ml-swanalekha",
+          "name": "Swanalekha",
+          "isNew": false
+        },
+        {
+          "id": "varnam-ml",
+          "name": "Predictive",
+          "isNew": false
+        }
+      ]
+    },
+    {
+      "code": "mni",
+      "name": "Manipuri",
+      "native": "মৈতৈলোন্",
+      "dir": "ltr",
+      "region": "east",
+      "scripts": [
+        "Meetei Mayek",
+        "Bengali-Assamese"
+      ],
+      "isNew": false,
+      "layouts": [
+        {
+          "id": "meetei_mayek",
+          "name": "Meetei Mayek",
+          "isNew": true
+        },
+        {
+          "id": "manipuri_inscript",
+          "name": "Inscript",
+          "isNew": false
+        }
+      ]
+    },
+    {
+      "code": "mr",
+      "name": "Marathi",
+      "native": "मराठी",
+      "dir": "ltr",
+      "region": "west",
+      "scripts": [
+        "Devanagari"
+      ],
+      "isNew": false,
+      "layouts": [
+        {
+          "id": "marathi",
+          "name": "Marathi",
+          "isNew": true
+        },
+        {
+          "id": "marathi_inscript",
+          "name": "Inscript",
+          "isNew": true
+        },
+        {
+          "id": "mr-transliteration",
+          "name": "Transliteration",
+          "isNew": false
+        },
+        {
+          "id": "marathi_phonetic",
+          "name": "Phonetic",
+          "isNew": true
+        },
+        {
+          "id": "varnam-mr",
+          "name": "Predictive",
+          "isNew": true
+        }
+      ]
+    },
+    {
+      "code": "mnw",
+      "name": "Mon",
+      "native": "ဘာသာ မန်",
+      "dir": "ltr",
+      "region": "beyond",
+      "scripts": [
+        "Myanmar"
+      ],
+      "isNew": false,
+      "layouts": [
+        {
+          "id": "mon",
+          "name": "Mon",
+          "isNew": false
+        }
+      ]
+    },
+    {
+      "code": "ne",
+      "name": "Nepali",
+      "native": "नेपाली",
+      "dir": "ltr",
+      "region": "north",
+      "scripts": [
+        "Devanagari"
+      ],
+      "isNew": false,
+      "layouts": [
+        {
+          "id": "nepali_romanized",
+          "name": "Romanized",
+          "isNew": false
+        },
+        {
+          "id": "nepali_traditional",
+          "name": "Traditional",
+          "isNew": false
+        },
+        {
+          "id": "ne-transliteration",
+          "name": "Transliteration",
+          "isNew": false
+        },
+        {
+          "id": "nepali_inscript",
+          "name": "Inscript",
+          "isNew": false
+        },
+        {
+          "id": "varnam-ne",
+          "name": "Predictive",
+          "isNew": true
+        }
+      ]
+    },
+    {
+      "code": "or",
+      "name": "Odia",
+      "native": "ଓଡ଼ିଆ",
+      "dir": "ltr",
+      "region": "east",
+      "scripts": [
+        "Odia"
+      ],
+      "isNew": false,
+      "layouts": [
+        {
+          "id": "oriya_inscript",
+          "name": "Inscript",
+          "isNew": false
+        },
+        {
+          "id": "or-transliteration",
+          "name": "Transliteration",
+          "isNew": false
+        },
+        {
+          "id": "or-lekhani",
+          "name": "Lekhani",
+          "isNew": false
+        },
+        {
+          "id": "odia_phonetic",
+          "name": "Phonetic",
+          "isNew": true
+        },
+        {
+          "id": "varnam-or",
+          "name": "Predictive",
+          "isNew": true
+        }
+      ]
+    },
+    {
+      "code": "pa",
+      "name": "Punjabi",
+      "native": "ਪੰਜਾਬੀ",
+      "dir": "ltr",
+      "region": "north",
+      "scripts": [
+        "Gurmukhi"
+      ],
+      "isNew": false,
+      "layouts": [
+        {
+          "id": "punjabi",
+          "name": "Phonetic",
+          "isNew": false
+        },
+        {
+          "id": "punjabi_inscript",
+          "name": "Inscript",
+          "isNew": false
+        },
+        {
+          "id": "punjabi_jhelum",
+          "name": "Jhelum",
+          "isNew": true
+        },
+        {
+          "id": "pa-transliteration",
+          "name": "Transliteration",
+          "isNew": false
+        },
+        {
+          "id": "varnam-pa",
+          "name": "Predictive",
+          "isNew": true
+        }
+      ]
+    },
+    {
+      "code": "rhg",
+      "name": "Rohingya",
+      "native": "𐴌𐴟𐴇𐴝𐴙𐴚𐴒𐴙𐴝",
+      "dir": "rtl",
+      "region": "beyond",
+      "scripts": [
+        "Hanifi Rohingya"
+      ],
+      "isNew": true,
+      "layouts": [
+        {
+          "id": "rohingya",
+          "name": "Hanifi Rohingya",
+          "isNew": true
+        }
+      ]
+    },
+    {
+      "code": "sa",
+      "name": "Sanskrit",
+      "native": "संस्कृतम्",
+      "dir": "ltr",
+      "region": "north",
+      "scripts": [
+        "Devanagari"
+      ],
+      "isNew": false,
+      "layouts": [
+        {
+          "id": "sa-transliteration",
+          "name": "Transliteration",
+          "isNew": false
+        },
+        {
+          "id": "varnam-sa",
+          "name": "Predictive",
+          "isNew": true
+        }
+      ]
+    },
+    {
+      "code": "sat",
+      "name": "Santali",
+      "native": "ᱥᱟᱱᱛᱟᱲᱤ",
+      "dir": "ltr",
+      "region": "east",
+      "scripts": [
+        "Devanagari",
+        "Ol Chiki"
+      ],
+      "isNew": false,
+      "layouts": [
+        {
+          "id": "santali_inscript",
+          "name": "Inscript",
+          "isNew": false
+        },
+        {
+          "id": "santali_olck",
+          "name": "Ol Chiki",
+          "isNew": false
+        },
+        {
+          "id": "santali_olck_compact",
+          "name": "Ol Chiki Compact",
+          "isNew": false
+        }
+      ]
+    },
+    {
+      "code": "saz",
+      "name": "Saurashtra",
+      "native": "ꢱꣃꢬꢵꢰ꣄ꢜ꣄ꢬ",
+      "dir": "ltr",
+      "region": "south",
+      "scripts": [
+        "Saurashtra"
+      ],
+      "isNew": true,
+      "layouts": [
+        {
+          "id": "saurashtra",
+          "name": "Saurashtra",
+          "isNew": true
+        }
+      ]
+    },
+    {
+      "code": "sd",
+      "name": "Sindhi",
+      "native": "सिन्धी",
+      "dir": "ltr",
+      "region": "west",
+      "scripts": [
+        "Devanagari"
+      ],
+      "isNew": true,
+      "layouts": [
+        {
+          "id": "sindhi_inscript",
+          "name": "Inscript",
+          "isNew": true
+        }
+      ]
+    },
+    {
+      "code": "si",
+      "name": "Sinhala",
+      "native": "සිංහල",
+      "dir": "ltr",
+      "region": "south",
+      "scripts": [
+        "Sinhala"
+      ],
+      "isNew": false,
+      "layouts": [
+        {
+          "id": "si-singlish",
+          "name": "Singlish",
+          "isNew": false
+        },
+        {
+          "id": "sinhala",
+          "name": "Wijesekara",
+          "isNew": true
+        }
+      ]
+    },
+    {
+      "code": "syl",
+      "name": "Sylheti",
+      "native": "ꠍꠤꠟꠐꠤ",
+      "dir": "ltr",
+      "region": "east",
+      "scripts": [
+        "Syloti Nagri"
+      ],
+      "isNew": true,
+      "layouts": [
+        {
+          "id": "syloti_nagri",
+          "name": "Syloti Nagri",
+          "isNew": true
+        }
+      ]
+    },
+    {
+      "code": "ta",
+      "name": "Tamil",
+      "native": "தமிழ்",
+      "dir": "ltr",
+      "region": "south",
+      "scripts": [
+        "Tamil"
+      ],
+      "isNew": false,
+      "layouts": [
+        {
+          "id": "tamil",
+          "name": "Phonetic",
+          "isNew": false
+        },
+        {
+          "id": "ta-99",
+          "name": "Tamil 99",
+          "isNew": false
+        },
+        {
+          "id": "tamil_compact",
+          "name": "Compact",
+          "isNew": false
+        },
+        {
+          "id": "tamil_inscript",
+          "name": "Inscript",
+          "isNew": false
+        },
+        {
+          "id": "ta-transliteration",
+          "name": "Transliteration",
+          "isNew": false
+        },
+        {
+          "id": "varnam-ta",
+          "name": "Predictive",
+          "isNew": true
+        }
+      ]
+    },
+    {
+      "code": "te",
+      "name": "Telugu",
+      "native": "తెలుగు",
+      "dir": "ltr",
+      "region": "south",
+      "scripts": [
+        "Telugu"
+      ],
+      "isNew": false,
+      "layouts": [
+        {
+          "id": "telugu",
+          "name": "Phonetic",
+          "isNew": false
+        },
+        {
+          "id": "te-kachatathapa",
+          "name": "KaChaTaThaPa",
+          "isNew": false
+        },
+        {
+          "id": "telugu_apple",
+          "name": "Apple",
+          "isNew": true
+        },
+        {
+          "id": "telugu_compact",
+          "name": "Compact",
+          "isNew": false
+        },
+        {
+          "id": "telugu_inscript",
+          "name": "Inscript",
+          "isNew": false
+        },
+        {
+          "id": "te-transliteration",
+          "name": "Transliteration",
+          "isNew": false
+        },
+        {
+          "id": "varnam-te",
+          "name": "Predictive",
+          "isNew": true
+        }
+      ]
+    },
+    {
+      "code": "tcy",
+      "name": "Tulu",
+      "native": "ತುಳು",
+      "dir": "ltr",
+      "region": "south",
+      "scripts": [
+        "Kannada"
+      ],
+      "isNew": true,
+      "layouts": [
+        {
+          "id": "tulu_inscript",
+          "name": "Inscript",
+          "isNew": true
+        }
+      ]
+    },
+    {
+      "code": "ur",
+      "name": "Urdu",
+      "native": "اردو",
+      "dir": "rtl",
+      "region": "north",
+      "scripts": [
+        "Arabic"
+      ],
+      "isNew": false,
+      "layouts": [
+        {
+          "id": "urdu",
+          "name": "Navees",
+          "isNew": false
+        },
+        {
+          "id": "urdu_nla",
+          "name": "Windows",
+          "isNew": true
+        },
+        {
+          "id": "ur-transliteration",
+          "name": "Transliteration",
+          "isNew": false
+        }
+      ]
+    }
+  ],
+  "hero": [
+    {
+      "language": "ta",
+      "name": "Tamil",
+      "native": "தமிழ்",
+      "dir": "ltr",
+      "layout": "Tamil 99",
+      "rows": [
+        [
+          "ஆ",
+          "ஈ",
+          "ஊ",
+          "ஐ",
+          "ஏ",
+          "ள",
+          "ற",
+          "ன",
+          "ட",
+          "ண",
+          "ச",
+          "ஞ"
+        ],
+        [
+          "அ",
+          "இ",
+          "உ",
+          "்",
+          "எ",
+          "க",
+          "ப",
+          "ம",
+          "த",
+          "ந",
+          "ய"
+        ],
+        [
+          "ஔ",
+          "ஓ",
+          "ஒ",
+          "வ",
+          "ங",
+          "ல",
+          "ர",
+          "ழ"
+        ]
+      ]
+    },
+    {
+      "language": "ml",
+      "name": "Malayalam",
+      "native": "മലയാളം",
+      "dir": "ltr",
+      "layout": "Lalitha",
+      "rows": [
+        [
+          "ഐ",
+          "വ",
+          "െ",
+          "ര",
+          "ത",
+          "യ",
+          "ു",
+          "ി",
+          "ൊ",
+          "പ"
+        ],
+        [
+          "ാ",
+          "സ",
+          "ദ",
+          "ഫ",
+          "ഗ",
+          "ഹ",
+          "ജ",
+          "ക",
+          "ല"
+        ],
+        [
+          "ഴ",
+          "്",
+          "ച",
+          "വ",
+          "ബ",
+          "ന",
+          "മ"
+        ]
+      ]
+    },
+    {
+      "language": "bn",
+      "name": "Bengali",
+      "native": "বাংলা",
+      "dir": "ltr",
+      "layout": "",
+      "rows": [
+        [
+          "ঔ",
+          "ঐ",
+          "আ",
+          "ঈ",
+          "ঊ",
+          "ব",
+          "হ",
+          "গ",
+          "দ",
+          "জ",
+          "ড"
+        ],
+        [
+          "ও",
+          "এ",
+          "অ",
+          "ই",
+          "উ",
+          "প",
+          "র",
+          "ক",
+          "ত",
+          "চ",
+          "ট"
+        ],
+        [
+          "ঁ",
+          "ঢ",
+          "ম",
+          "ন",
+          "ঞ",
+          "ল",
+          "ষ",
+          "স",
+          "য়",
+          "।"
+        ]
+      ]
+    },
+    {
+      "language": "te",
+      "name": "Telugu",
+      "native": "తెలుగు",
+      "dir": "ltr",
+      "layout": "Phonetic",
+      "rows": [
+        [
+          "ట",
+          "డ",
+          "ె",
+          "ర",
+          "త",
+          "య",
+          "ు",
+          "ి",
+          "ొ",
+          "ప"
+        ],
+        [
+          "ా",
+          "స",
+          "ద",
+          "్",
+          "గ",
+          "హ",
+          "జ",
+          "క",
+          "ల"
+        ],
+        [
+          "ఞ",
+          "ష",
+          "చ",
+          "వ",
+          "బ",
+          "న",
+          "మ"
+        ]
+      ]
+    },
+    {
+      "language": "kn",
+      "name": "Kannada",
+      "native": "ಕನ್ನಡ",
+      "dir": "ltr",
+      "layout": "KaGaPa",
+      "rows": [
+        [
+          "ಟ",
+          "ಡ",
+          "ೆ",
+          "ರ",
+          "ತ",
+          "ಯ",
+          "ು",
+          "ಿ",
+          "ೊ",
+          "ಪ"
+        ],
+        [
+          "ಾ",
+          "ಸ",
+          "ದ",
+          "್",
+          "ಗ",
+          "ಹ",
+          "ಜ",
+          "ಕ",
+          "ಲ"
+        ],
+        [
+          "ಞ",
+          "ಷ",
+          "ಚ",
+          "ವ",
+          "ಬ",
+          "ನ",
+          "ಮ"
+        ]
+      ]
+    },
+    {
+      "language": "gu",
+      "name": "Gujarati",
+      "native": "ગુજરાતી",
+      "dir": "ltr",
+      "layout": "Phonetic",
+      "rows": [
+        [
+          "ઓ",
+          "ટ",
+          "ે",
+          "ર",
+          "ત",
+          "ય",
+          "ુ",
+          "િ",
+          "ો",
+          "પ"
+        ],
+        [
+          "ા",
+          "સ",
+          "દ",
+          "્",
+          "ગ",
+          "હ",
+          "જ",
+          "ક",
+          "લ"
+        ],
+        [
+          "ઙ",
+          "ષ",
+          "ચ",
+          "વ",
+          "બ",
+          "ન",
+          "મ",
+          "।"
+        ]
+      ]
+    },
+    {
+      "language": "pa",
+      "name": "Punjabi",
+      "native": "ਪੰਜਾਬੀ",
+      "dir": "ltr",
+      "layout": "Phonetic",
+      "rows": [
+        [
+          "ਤ",
+          "ਾ",
+          "ੲ",
+          "ਰ",
+          "ਟ",
+          "ੇ",
+          "ੁ",
+          "ਿ",
+          "ੋ",
+          "ਪ"
+        ],
+        [
+          "ੳ",
+          "ਸ",
+          "ਦ",
+          "ਡ",
+          "ਗ",
+          "ਹ",
+          "ਜ",
+          "ਕ",
+          "ਲ"
+        ],
+        [
+          "ਜ਼",
+          "ਣ",
+          "ਚ",
+          "ਵ",
+          "ਬ",
+          "ਨ",
+          "ਮ"
+        ]
+      ]
+    },
+    {
+      "language": "si",
+      "name": "Sinhala",
+      "native": "සිංහල",
+      "dir": "ltr",
+      "layout": "Wijesekara",
+      "rows": [
+        [
+          "ු",
+          "අ",
+          "ැ",
+          "ර",
+          "එ",
+          "හ",
+          "ම",
+          "ස",
+          "ද",
+          "ච",
+          "ඤ"
+        ],
+        [
+          "්",
+          "ි",
+          "ා",
+          "ෙ",
+          "ට",
+          "ය",
+          "ව",
+          "න",
+          "ක",
+          "ත",
+          "ඏ"
+        ],
+        [
+          "ං",
+          "ජ",
+          "ඩ",
+          "ඉ",
+          "බ",
+          "ප",
+          "ල",
+          "ග",
+          "ෳ"
+        ]
+      ]
+    },
+    {
+      "language": "ur",
+      "name": "Urdu",
+      "native": "اردو",
+      "dir": "rtl",
+      "layout": "Navees",
+      "rows": [
+        [
+          "ق",
+          "و",
+          "ع",
+          "ر",
+          "ت",
+          "ے",
+          "ء",
+          "ی",
+          "ہ",
+          "پ"
+        ],
+        [
+          "ا",
+          "س",
+          "د",
+          "ف",
+          "گ",
+          "ح",
+          "ج",
+          "ک",
+          "ل"
+        ],
+        [
+          "ز",
+          "ش",
+          "چ",
+          "ط",
+          "ب",
+          "ن",
+          "م"
+        ]
+      ]
+    }
+  ]
+}
