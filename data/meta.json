@@ -67,14 +67,14 @@
     "Wara": "Warang Citi"
   },
   "hero": [
-    { "language": "ta", "layout": "ta-99" },
-    { "language": "ml", "layout": "malayalam" },
-    { "language": "bn", "layout": "bengali" },
-    { "language": "te", "layout": "telugu" },
-    { "language": "kn", "layout": "kannada" },
-    { "language": "gu", "layout": "gujarati" },
-    { "language": "pa", "layout": "punjabi" },
-    { "language": "si", "layout": "sinhala" },
-    { "language": "ur", "layout": "urdu" }
+    { "language": "ml", "layout": "malayalam_inscript", "image": "/screenshots/keyboards/ml-inscript.webp" },
+    { "language": "te", "layout": "telugu_apple", "image": "/screenshots/keyboards/te-apple.webp" },
+    { "language": "kn", "layout": "kannada", "image": "/screenshots/keyboards/kn-kagapa.webp" },
+    { "language": "bn", "layout": "bengali_inscript", "image": "/screenshots/keyboards/bn-inscript.webp" },
+    { "language": "or", "layout": "odia_phonetic", "image": "/screenshots/keyboards/or-phonetic.webp" },
+    { "language": "pa", "layout": "punjabi_jhelum", "image": "/screenshots/keyboards/pa-jhelum.webp" },
+    { "language": "ur", "layout": "urdu_nla", "image": "/screenshots/keyboards/ur-windows.webp" },
+    { "language": "mni", "layout": "meetei_mayek", "image": "/screenshots/keyboards/mni-meetei-mayek.webp" },
+    { "language": "sat", "layout": "santali_olck", "image": "/screenshots/keyboards/sat-ol-chiki.webp" }
   ]
 }

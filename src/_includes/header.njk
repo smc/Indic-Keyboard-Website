@@ -4,12 +4,12 @@
     <span>Indic Keyboard</span>
   </a>
   <nav aria-label="Main" class="ik-nav">
-    <a href="/#languages">Languages</a>
+    <a href="/languages.html"{% if page.url == "/languages.html" or "/languages/" in page.url %} class="is-current"{% endif %}{% if page.url == "/languages.html" %} aria-current="page"{% endif %}>Languages</a>
     <a href="/#features">Features</a>
     <a href="/whats-new.html"{% if page.url == "/whats-new.html" %} class="is-current" aria-current="page"{% endif %}>What's new</a>
   </nav>
   <div class="ik-header__icons">
-    <a href="https://gitlab.com/indicproject/indic-keyboard" class="ik-icon-btn" aria-label="Source code" title="Source code">
+    <a href="{{ links.source }}" class="ik-icon-btn" aria-label="Source code" title="Source code">
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 8l-4 4 4 4"/><path d="M16 8l4 4-4 4"/><path d="M14 5l-4 14"/></svg>
     </a>
     <a href="/#download" class="ik-icon-btn ik-icon-btn--dark" aria-label="Download" title="Download">

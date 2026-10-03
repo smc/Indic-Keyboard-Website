@@ -1,0 +1,114 @@
+---
+layout: base.njk
+pageClass: ik-layout
+pagination:
+  data: layoutPages
+  size: 1
+  alias: item
+permalink: "{{ item.layout.url }}"
+eleventyComputed:
+  title: "{% if item.layout.name.startsWith(item.language.name) %}{{ item.layout.name }}{% else %}{{ item.language.name }} {{ item.layout.name }}{% endif %}"
+  description: "The {{ item.language.name }} {{ item.layout.name }} layout in Indic Keyboard: {% if item.layout.mappings %}what each key types{% elif item.layout.keyboard %}its keys{% else %}how it works{% endif %} and where it comes from."
+---
+{% set l = item.language %}
+{% set x = item.layout %}
+<section class="ik-layout__intro">
+  <nav aria-label="Breadcrumb" class="ik-crumbs"><a href="/">Home</a> / <a href="/languages.html">Languages</a> / <a href="/languages.html#{{ l.code }}">{{ l.name }}</a></nav>
+  <div class="ik-layout__tags">
+    <span class="badge">{{ x.type }}</span>
+    {% if x.isNew %}<span class="badge">New in 4.0</span>{% endif %}
+    <span class="ik-layout__lang" lang="{{ l.code }}" dir="{{ l.dir }}">{{ l.native }}</span>
+  </div>
+  <h1>{{ title }}</h1>
+  <p>
+    {%- if x.type == 'Transliteration' -%}Type {{ l.name }} with English letters, the way words sound. Letters change as you type.
+    {%- elif x.type == 'Predictive' -%}Type how a word sounds in English letters. Varnam suggests the right {{ l.name }} spelling and learns the words you use. Needs the {{ l.name }} language pack.
+    {%- elif x.type == 'Inscript' -%}Inscript is the Government of India standard keyboard for Indian scripts. If you know it on a computer, it works the same here.
+    {%- elif x.type == 'Phonetic' -%}Letters sit where their English sound-alikes are, so they are easy to find.
+    {%- elif x.type == 'Compact' -%}No shift key. Long-press a letter for its other forms.
+    {%- else -%}A {{ l.name }} keyboard with the letters of the script on the keys.
+    {%- endif -%}
+  </p>
+</section>
+
+{% if x.reference %}
+<section class="ik-layout__facts">
+  <div class="ik-card"><span class="ik-layout__label">Based on</span><a href="{{ x.reference.url }}">{{ x.reference.label }}</a></div>
+</section>
+{% endif %}
+
+{% if x.mappings %}
+<section class="ik-section ik-layout__section">
+  <div class="ik-section__head">
+    <h2>Key mappings</h2>
+    <p>What each key or short sequence types on its own.</p>
+  </div>
+  <ul class="ik-mappings">
+    {% for m in x.mappings %}
+    <li><span class="ik-mappings__out" lang="{{ l.code }}" dir="{{ l.dir }}">{{ m.out }}</span><code>{{ m.keys }}</code></li>
+    {% endfor %}
+  </ul>
+</section>
+{% if x.rules.length %}
+<section class="ik-layout__section ik-layout__chains">
+  <h2>How keys combine</h2>
+  <p>Rules that change what is already typed. In a rule, <code>[ ]</code> matches any one of the letters inside, <code>( )</code> remembers what it matched and <code>$1</code>, <code>$2</code> put it back. Rules are tried in this order and the first match wins.</p>
+  <ol class="ik-rules">
+    {% for r in x.rules %}
+    <li>
+      <code class="ik-rules__rule" lang="{{ l.code }}">{{ r.input }} <span aria-hidden="true">→</span><span class="visually-hidden">becomes</span> {{ r.replacement }}</code>
+      {% if r.context %}<span class="ik-rules__context">Only right after typing <code>{{ r.context }}</code></span>{% endif %}
+      {% if r.example %}<span class="ik-rules__example">e.g. <span lang="{{ l.code }}" dir="{{ l.dir }}">{{ r.example.before }}</span>{% if r.example.before %} + {% endif %}<code>{{ r.example.keys }}</code> → <span lang="{{ l.code }}" dir="{{ l.dir }}">{{ r.example.after }}</span></span>{% endif %}
+    </li>
+    {% endfor %}
+  </ol>
+</section>
+{% endif %}
+{% endif %}
+
+{% if x.keyboard %}
+<section class="ik-section ik-layout__section">
+  <div class="ik-section__head">
+    <h2>Keys</h2>
+    <p>The letter keys, as they appear on the keyboard{% if x.keyboard.shifted %}, with and without shift{% endif %}.</p>
+  </div>
+  {% for layer in [{ name: 'Keys', rows: x.keyboard.normal }, { name: 'With shift', rows: x.keyboard.shifted }] %}{% if layer.rows %}
+  <figure class="ik-keyboard">
+    {% if x.keyboard.shifted %}<figcaption>{{ layer.name }}</figcaption>{% endif %}
+    {% for row in layer.rows %}
+    <div class="ik-keyboard__row">
+      {% for key in row %}<span class="ik-keyboard__key" lang="{{ l.code }}">{{ key }}</span>{% endfor %}
+    </div>
+    {% endfor %}
+  </figure>
+  {% endif %}{% endfor %}
+</section>
+{% endif %}
+
+{% if x.type == 'Predictive' %}
+<section class="ik-section ik-layout__section">
+  <div class="ik-card ik-trust">
+    <h2>Learns as you type</h2>
+    <p>Predictive transliteration does not use a fixed table. <a href="{{ links.varnam }}">Varnam</a> offers the likely spellings for what you type and remembers the words you pick. Download the {{ l.name }} language pack from the keyboard's settings to use it.</p>
+  </div>
+</section>
+{% endif %}
+
+{% if item.others.length %}
+<section class="ik-section ik-layout__section">
+  <h2 class="ik-layout__others-title">Other {{ l.name }} layouts</h2>
+  <ul class="ik-layout__others">
+    {% for o in item.others %}<li><a href="{{ o.url }}">{{ o.name }}</a></li>{% endfor %}
+  </ul>
+</section>
+{% endif %}
+
+<section class="ik-section">
+  <div class="ik-report">
+    <div>
+      <h2>Something types wrong?</h2>
+      <p>Tell us the keys you pressed, what you expected and what you got.</p>
+    </div>
+    <a href="{{ links.issues }}" class="ik-btn ik-btn--light">Report a layout issue</a>
+  </div>
+</section>

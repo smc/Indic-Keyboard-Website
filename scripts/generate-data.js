@@ -1,5 +1,6 @@
 #!/usr/bin/env node
-// Builds src/_data/home.json from a local checkout of the Indic Keyboard app.
+// Builds src/_data/home.json and src/_data/layouts.json from a local checkout of the
+// Indic Keyboard app.
 //
 //   INDIC_KEYBOARD_REPO=~/git/indic-keyboard npm run data
 //
@@ -11,10 +12,12 @@
 const fs = require('fs')
 const path = require('path')
 const { execFileSync } = require('child_process')
+const { createLayoutBuilder } = require('./lib/layouts')
 
 const SITE = path.resolve(__dirname, '..')
 const META_FILE = path.join(SITE, 'data/meta.json')
 const OUT_FILE = path.join(SITE, 'src/_data/home.json')
+const LAYOUTS_FILE = path.join(SITE, 'src/_data/layouts.json')
 
 const repoArg = process.env.INDIC_KEYBOARD_REPO
 if (!repoArg) {
@@ -31,7 +34,8 @@ const warnings = []
 const warn = (msg) => warnings.push(msg)
 
 // Every Unicode script, found by asking the regex engine which four-letter codes
-// \p{Script=...} accepts. Latin, Common, Inherited and Unknown never count.
+// \p{Script=...} accepts. Latin, Common, Inherited and Unknown characters are ignored when reading
+// keys, since transliteration layouts have Latin keys; English is counted as Latin on its own.
 const IGNORED_SCRIPTS = new Set(['Latn', 'Zyyy', 'Zinh', 'Zzzz'])
 let unicodeScripts = null
 function allUnicodeScripts () {
@@ -131,12 +135,6 @@ const keySpecs = (xml) => [...xml.matchAll(/latin:keySpec="([^"]*)"/g)]
   .map((spec) => decode(spec.split('|')[0] || spec.split('|')[1] || '').replace(/\\(.)/g, '$1'))
   .filter(Boolean)
 
-function unshiftedRow (file) {
-  const xml = stripComments(fs.readFileSync(file, 'utf8'))
-  const def = xml.match(/<default>([\s\S]*?)<\/default>/)
-  return keySpecs(def ? def[1] : xml)
-}
-
 function dominantScript (text) {
   const counts = {}
   for (const ch of text) {
@@ -148,7 +146,9 @@ function dominantScript (text) {
 }
 
 function layoutScript (s, languageName) {
-  if (s.method && !s.method.startsWith('varnam-')) {
+  // Predictive (Varnam) layouts use QWERTY keys but type the language's own script.
+  if (s.method.startsWith('varnam-')) return null
+  if (s.method) {
     const file = path.join(RULES_DIR, `${s.method.toLowerCase().replace(/-/g, '_')}.xml`)
     if (!fs.existsSync(file)) return null
     const out = [...fs.readFileSync(file, 'utf8').matchAll(/replacement="([^"]*)"/g)].map((m) => decode(m[1])).join('')
@@ -156,7 +156,8 @@ function layoutScript (s, languageName) {
   }
   // Subtypes without a KeyboardLayoutSet use the set named after the language (ar uses arabic).
   const set = s.layoutSet || languageName.toLowerCase()
-  if (set === 'qwerty' || set === 'english') return null
+  // A plain QWERTY layout (English) types Latin.
+  if (set === 'qwerty' || set === 'english') return 'Latn'
   const text = rowkeyFiles(set).map((f) => keySpecs(fs.readFileSync(f, 'utf8')).join('')).join('')
   return dominantScript(text)
 }
@@ -186,17 +187,17 @@ function oldSubtypes () {
   }
 }
 
+// Screenshots of real keyboards for the home page hero, named in meta.hero.
 function heroKeyboards (languages) {
-  return meta.hero.map(({ language, layout }) => {
+  return meta.hero.map(({ language, layout, image }) => {
     const lang = languages.find((l) => l.code === language)
     const entry = lang && lang.layouts.find((l) => l.id === layout)
     if (!entry) {
       warn(`hero layout "${layout}" for "${language}" not found`)
       return null
     }
-    const rows = rowkeyFiles(entry.layoutSet).map(unshiftedRow).filter((r) => r.length).slice(0, 3)
-    if (rows.length < 3 || rows.some((r) => r.length > 12)) {
-      warn(`hero layout "${layout}" does not have three rows of at most 12 keys`)
+    if (!image || !fs.existsSync(path.join(SITE, 'src/static', image))) {
+      warn(`hero screenshot "${image}" for "${language}" is missing from src/static`)
       return null
     }
     return {
@@ -205,7 +206,7 @@ function heroKeyboards (languages) {
       native: lang.native,
       dir: lang.dir,
       layout: entry.known ? entry.name : '',
-      rows
+      image
     }
   }).filter(Boolean)
 }
@@ -217,6 +218,7 @@ function main () {
   const oldKeys = old && new Set(old.map(subtypeKey))
   const oldLanguages = old && new Set(old.map((s) => s.language))
   const englishName = new Intl.DisplayNames(['en'], { type: 'language' })
+  const layoutBuilder = createLayoutBuilder({ repo: REPO, xmlDir: XML_DIR, rulesDir: RULES_DIR, meta, decode, stripComments, rowkeyFiles, keySpecs, warn })
 
   const byLanguage = new Map()
   for (const s of subtypes) {
@@ -234,6 +236,7 @@ function main () {
     const name = m.name || (intlName !== code ? intlName : code)
     if (name === code) warn(`language "${code}" has no English name; add "name" in meta.languages`)
     const scripts = new Set()
+    const usedSlugs = new Set()
     const layouts = subs.map((s) => {
       const script = layoutScript(s, name)
       if (script) {
@@ -243,12 +246,14 @@ function main () {
         scriptLayouts.get(script).push(!!oldKeys && !oldKeys.has(subtypeKey(s)))
       }
       const { name: layoutLabel, known } = layoutName(s, strings)
+      const isNew = !!oldKeys && !oldKeys.has(subtypeKey(s))
       return {
         id: layoutKey(s),
         layoutSet: s.layoutSet,
         name: layoutLabel,
         known,
-        isNew: !!oldKeys && !oldKeys.has(subtypeKey(s))
+        isNew,
+        detail: layoutBuilder.build(s, { language: code, languageName: name, name: layoutLabel, isNew, usedSlugs })
       }
     })
     const primary = [...scripts][0]
@@ -279,13 +284,25 @@ function main () {
     newScripts: [...scriptLayouts.entries()].filter(([, flags]) => flags.every(Boolean)).map(([name]) => displayScript(name)).sort(),
     languages: languages.map(({ layouts, ...l }) => ({
       ...l,
-      layouts: layouts.map(({ layoutSet, known, ...x }) => x)
+      layouts: layouts.map(({ layoutSet, known, detail, ...x }) => ({ ...x, url: detail.url }))
     })),
     hero: heroKeyboards(languages)
   }
 
   fs.mkdirSync(path.dirname(OUT_FILE), { recursive: true })
   fs.writeFileSync(OUT_FILE, JSON.stringify(data, null, 2) + '\n')
+
+  const layoutData = {
+    source: { commit, jqueryIme: layoutBuilder.imeCommit },
+    languages: languages.map(({ code, name, native, dir, scripts, isNew, layouts }) => ({
+      code, name, native, dir, scripts, isNew, layouts: layouts.map((x) => x.detail)
+    }))
+  }
+  fs.writeFileSync(LAYOUTS_FILE, JSON.stringify(layoutData) + '\n')
+  const all = layoutData.languages.flatMap((l) => l.layouts)
+  console.log(`Wrote ${path.relative(SITE, LAYOUTS_FILE)}: ${all.length} layouts, ` +
+    `${all.filter((x) => x.mappings).length} with key mappings, ${all.filter((x) => x.keyboard).length} with keyboards, ` +
+    `${all.filter((x) => x.reference).length} with a reference.`)
   console.log(`Wrote ${path.relative(SITE, OUT_FILE)} from ${commit}: ` +
     `${data.stats.languages} languages, ${data.stats.layouts} layouts, ${data.stats.scripts} scripts ` +
     `(${data.stats.newLanguages} new languages, ${data.stats.newLayouts} new layouts since ${compareRef}).`)

@@ -1,84 +1,47 @@
-// Home page behaviour: the animated hero keyboard and the language explorer.
+// Home page behaviour: the hero keyboard screenshots and the language explorer.
 // The page is fully rendered without this script; it only adds motion and filtering.
 
 (function () {
-  const TICK_MS = 260
-  const HOLD_TICKS = 9
+  const ROTATE_MS = 3200
   const INITIAL_LANGUAGES = 12
 
-  function graphemes (word) {
-    if (window.Intl && Intl.Segmenter) {
-      return Array.from(new Intl.Segmenter(undefined, { granularity: 'grapheme' }).segment(word), (s) => s.segment)
-    }
-    return Array.from(word)
-  }
-
+  // Hero: cycles through screenshots of real layouts. Pauses while hovered or focused.
   function initHero (root) {
     const hero = JSON.parse(root.querySelector('[data-hero-data]').textContent)
     const label = root.querySelector('[data-hero-label]')
-    const field = root.querySelector('[data-hero-field]')
-    const typed = root.querySelector('[data-hero-typed]')
-    const strip = root.querySelector('[data-hero-strip]').children
-    const rows = root.querySelector('[data-hero-rows]')
-    const space = root.querySelector('[data-hero-space]')
+    const native = root.querySelector('[data-hero-native]')
+    const shots = Array.from(root.querySelectorAll('[data-hero-shot]'))
     const dots = root.querySelector('[data-hero-dots]')
+    const buttons = Array.from(dots.children)
     let index = 0
-    let parts = graphemes(hero[0].native)
-    let step = parts.length
-    let keys = []
+    let paused = false
 
-    function renderLanguage () {
-      const h = hero[index]
-      const around = (offset) => hero[(index + offset + hero.length) % hero.length]
-      parts = graphemes(h.native)
-      label.textContent = h.layout ? `${h.name} · ${h.layout}` : h.name
-      field.lang = h.language
-      field.dir = h.dir
-      strip[0].textContent = around(-1).native
-      strip[1].textContent = h.native
-      strip[1].lang = h.language
-      strip[2].textContent = around(1).native
-      space.textContent = h.native
-      space.lang = h.language
-      rows.replaceChildren(...h.rows.map((row) => {
-        const div = document.createElement('div')
-        div.className = 'hero-keyboard__row'
-        div.append(...row.map((key) => {
-          const span = document.createElement('span')
-          span.className = 'hero-keyboard__key'
-          span.lang = h.language
-          span.textContent = key
-          return span
-        }))
-        return div
-      }))
-      keys = Array.from(rows.querySelectorAll('.hero-keyboard__key'))
-      Array.from(dots.children).forEach((dot, i) => dot.setAttribute('aria-pressed', i === index ? 'true' : 'false'))
-    }
-
-    function renderStep () {
-      typed.textContent = parts.slice(0, Math.min(step, parts.length)).join('')
-      const active = step >= 1 && step <= parts.length ? parts[step - 1] : ''
-      keys.forEach((k) => k.classList.toggle('is-hit', !!active && active.includes(k.textContent)))
-    }
-
-    function select (i) {
+    function show (i) {
       index = i
-      step = 0
-      renderLanguage()
-      renderStep()
+      const h = hero[i]
+      label.textContent = h.layout ? `${h.name} · ${h.layout}` : h.name
+      native.textContent = h.native
+      native.lang = h.language
+      native.dir = h.dir
+      shots.forEach((img, n) => {
+        img.classList.toggle('is-active', n === i)
+        if (n === i) img.removeAttribute('aria-hidden')
+        else img.setAttribute('aria-hidden', 'true')
+      })
+      buttons.forEach((b, n) => b.setAttribute('aria-pressed', n === i ? 'true' : 'false'))
     }
 
     dots.hidden = false
-    Array.from(dots.children).forEach((dot, i) => dot.addEventListener('click', () => select(i)))
-    renderLanguage()
+    buttons.forEach((b, i) => b.addEventListener('click', () => show(i)))
+    root.addEventListener('mouseenter', () => { paused = true })
+    root.addEventListener('mouseleave', () => { paused = false })
+    root.addEventListener('focusin', () => { paused = true })
+    root.addEventListener('focusout', () => { paused = false })
 
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
     setInterval(() => {
-      step += 1
-      if (step > parts.length + HOLD_TICKS) select((index + 1) % hero.length)
-      else renderStep()
-    }, TICK_MS)
+      if (!paused && !document.hidden) show((index + 1) % hero.length)
+    }, ROTATE_MS)
   }
 
   function initExplorer (root) {

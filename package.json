@@ -6,6 +6,9 @@
     "data": "node scripts/generate-data.js"
   },
   "devDependencies": {
-    "@11ty/eleventy": "^3.1.6"
+    "@11ty/eleventy": "^3.1.6",
+    "jquery": "^3.7.1",
+    "jquery.ime": "github:wikimedia/jquery.ime#b08294959db58afdc32934e0332a09bb92f07b6c",
+    "jsdom": "^29.1.1"
   }
 }
